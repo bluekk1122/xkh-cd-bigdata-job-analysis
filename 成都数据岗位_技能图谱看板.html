@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>成都数字岗位 · 技能图谱与学习路径</title>
+<style>
+:root{--ink:#1f2937;--ink2:#6b7280;--line:#e5e7eb;--bg:#f6f7f9;--card:#fff;--blue:#2563eb;--teal:#0d9488;--amber:#d97706;}
+*{box-sizing:border-box;}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Microsoft YaHei','PingFang SC','Hiragino Sans GB',sans-serif;line-height:1.65;}
+.wrap{max-width:1180px;margin:0 auto;padding:40px 24px 64px;}
+.eyebrow{font-size:12px;letter-spacing:.14em;color:var(--blue);font-weight:700;}
+h1{font-size:30px;margin:8px 0 10px;font-weight:800;}
+.sub{color:var(--ink2);font-size:14px;max-width:790px;}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:26px 0 30px;}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;}
+.kpi .v{font-size:26px;font-weight:800;}
+.kpi .l{font-size:12px;color:var(--ink2);}
+.kpi.hi{background:linear-gradient(160deg,#eff6ff,#fff);border-color:#bfdbfe;}
+.kpi.hi .v{color:var(--blue);}
+section{margin-bottom:26px;}
+h2{font-size:17px;margin:0 0 4px;font-weight:700;display:flex;align-items:center;gap:8px;}
+h2 .n{display:inline-flex;width:22px;height:22px;border-radius:6px;background:#eff6ff;color:var(--blue);font-size:12px;align-items:center;justify-content:center;font-weight:700;flex:none;}
+.q{color:var(--ink2);font-size:13px;margin:0 0 12px 30px;}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;}
+.card h3{font-size:14px;margin:0 0 2px;font-weight:700;}
+.card .hint{font-size:12px;color:var(--ink2);margin:0 0 14px;}
+table{width:100%;border-collapse:collapse;font-size:13px;}
+th{text-align:left;font-size:11px;color:var(--ink2);font-weight:600;padding:6px 8px;border-bottom:1px solid var(--line);}
+td{padding:7px 8px;border-bottom:1px solid #f1f3f5;}
+td.s{font-weight:600;}
+td.up{color:#0d9488;font-weight:700;}
+td.down{color:#94a3b8;}
+.pill{display:inline-block;font-size:11px;padding:1px 8px;border-radius:20px;font-weight:700;}
+.warn{background:#fffbeb;border:1px solid #fde68a;border-radius:12px;padding:16px 18px;font-size:13px;margin-bottom:22px;}
+.warn b{color:#b45309;}
+.insight{background:linear-gradient(150deg,#f0fdfa,#fff);border:1px solid #99f6e4;border-radius:14px;padding:22px 24px;}
+.insight ul{margin:0;padding-left:20px;}
+.insight li{margin-bottom:10px;font-size:13.5px;}
+.insight b{color:var(--teal);}
+ul.pairs{margin:0;padding-left:18px;font-size:13px;}
+ul.pairs li{margin-bottom:6px;}
+.muted{color:var(--ink2);}
+footer{margin-top:34px;padding-top:16px;border-top:1px solid var(--line);font-size:12px;color:var(--ink2);}
+@media(max-width:900px){.kpis{grid-template-columns:repeat(2,1fr);}.grid{grid-template-columns:1fr;}}
+</style></head><body><div class="wrap">
+
+<div class="eyebrow">Skill Map · Chengdu Digital Jobs</div>
+<h1>成都数字岗位技能图谱</h1>
+<p class="sub">基于 <b>1200</b> 条成都数字岗位数据（快照 2026-09-10），其中 <b>540</b> 条带技能标签。
+本页回答一个具体问题：<b>想投成都的大数据 / 数据分析岗，到底该学哪几项技术，先学哪个。</b></p>
+
+<div class="warn">
+<b>先说清楚这份数据的边界（面试要主动讲）：</b>技能字段来源于「岗位名称词典抽取」，
+岗位详情页未采集。也就是说，技能信号来自<b>岗位标题里的技术关键词</b>，不是 JD 正文的完整要求。
+因此覆盖率因岗位类别差异极大——大数据类 82% 可用，数据分析类只有 14%。
+覆盖率不足的类别，本页<b>不给技能结论</b>。
+</div>
+
+<div class="kpis">
+<div class="kpi hi"><div class="v">1200</div><div class="l">数字岗位样本</div></div>
+<div class="kpi"><div class="v">540</div><div class="l">带技能标签（45%）</div></div>
+<div class="kpi"><div class="v">82%</div><div class="l">大数据类覆盖率（可用）</div></div>
+<div class="kpi"><div class="v">21</div><div class="l">大数据类技能词</div></div>
+</div>
+
+<section>
+<h2><span class="n">1</span>先看数据能不能用：各类别技能覆盖率</h2>
+<p class="q">业务问题：这份数据的技能字段，哪些岗位类别可信、哪些不能拿来下结论？</p>
+<div class="card">
+<h3>技能标注覆盖率 by 岗位类别</h3>
+<p class="hint">覆盖率 ≥50% 才具备推断价值。大数据 82% 可用；数据分析 14% 不可用。</p>
+<svg viewBox="0 0 640 176" width="100%" preserveAspectRatio="xMidYMid meet" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB',sans-serif"><rect x="104" y="8" width="450.0" height="18" rx="3" fill="#2563eb"/><text x="96" y="23" font-size="12" fill="#1f2937" text-anchor="end">大数据</text><text x="560.0" y="23" font-size="12" font-weight="600" fill="#1f2937">77/94 条  ·  82%</text><rect x="104" y="40" width="338.8" height="18" rx="3" fill="#2563eb"/><text x="96" y="55" font-size="12" fill="#1f2937" text-anchor="end">软件开发</text><text x="448.8" y="55" font-size="12" font-weight="600" fill="#1f2937">375/608 条  ·  62%</text><rect x="104" y="72" width="114.4" height="18" rx="3" fill="#2563eb"/><text x="96" y="87" font-size="12" fill="#1f2937" text-anchor="end">云计算/运维</text><text x="224.4" y="87" font-size="12" font-weight="600" fill="#1f2937">35/168 条  ·  21%</text><rect x="104" y="104" width="91.6" height="18" rx="3" fill="#2563eb"/><text x="96" y="119" font-size="12" fill="#1f2937" text-anchor="end">人工智能</text><text x="201.6" y="119" font-size="12" font-weight="600" fill="#1f2937">44/264 条  ·  17%</text><rect x="104" y="136" width="74.9" height="18" rx="3" fill="#2563eb"/><text x="96" y="151" font-size="12" fill="#1f2937" text-anchor="end">数据分析</text><text x="184.9" y="151" font-size="12" font-weight="600" fill="#1f2937">9/66 条  ·  14%</text></svg>
+</div>
+</section>
+
+<section>
+<h2><span class="n">2</span>大数据岗到底要什么技术</h2>
+<p class="q">业务问题：招聘方在岗位标题里反复强调哪几项技术？</p>
+<div class="card">
+<h3>技能需求频次 Top12（大数据类，n=94）</h3>
+<p class="hint">出现次数 = 有多少个岗位在标题中直接点名该技术。</p>
+<svg viewBox="0 0 640 400" width="100%" preserveAspectRatio="xMidYMid meet" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB',sans-serif"><rect x="104" y="8" width="450.0" height="18" rx="3" fill="#2563eb"/><text x="96" y="23" font-size="12" fill="#1f2937" text-anchor="end">数据治理</text><text x="560.0" y="23" font-size="12" font-weight="600" fill="#1f2937">19 次</text><rect x="104" y="40" width="402.6" height="18" rx="3" fill="#2563eb"/><text x="96" y="55" font-size="12" fill="#1f2937" text-anchor="end">数据库</text><text x="512.6" y="55" font-size="12" font-weight="600" fill="#1f2937">17 次</text><rect x="104" y="72" width="165.8" height="18" rx="3" fill="#2563eb"/><text x="96" y="87" font-size="12" fill="#1f2937" text-anchor="end">Java</text><text x="275.8" y="87" font-size="12" font-weight="600" fill="#1f2937">7 次</text><rect x="104" y="104" width="165.8" height="18" rx="3" fill="#2563eb"/><text x="96" y="119" font-size="12" fill="#1f2937" text-anchor="end">大模型</text><text x="275.8" y="119" font-size="12" font-weight="600" fill="#1f2937">7 次</text><rect x="104" y="136" width="118.4" height="18" rx="3" fill="#2563eb"/><text x="96" y="151" font-size="12" fill="#1f2937" text-anchor="end">数据中台</text><text x="228.4" y="151" font-size="12" font-weight="600" fill="#1f2937">5 次</text><rect x="104" y="168" width="118.4" height="18" rx="3" fill="#2563eb"/><text x="96" y="183" font-size="12" fill="#1f2937" text-anchor="end">数据仓库</text><text x="228.4" y="183" font-size="12" font-weight="600" fill="#1f2937">5 次</text><rect x="104" y="200" width="118.4" height="18" rx="3" fill="#2563eb"/><text x="96" y="215" font-size="12" fill="#1f2937" text-anchor="end">ETL</text><text x="228.4" y="215" font-size="12" font-weight="600" fill="#1f2937">5 次</text><rect x="104" y="232" width="94.7" height="18" rx="3" fill="#2563eb"/><text x="96" y="247" font-size="12" fill="#1f2937" text-anchor="end">Python</text><text x="204.7" y="247" font-size="12" font-weight="600" fill="#1f2937">4 次</text><rect x="104" y="264" width="94.7" height="18" rx="3" fill="#2563eb"/><text x="96" y="279" font-size="12" fill="#1f2937" text-anchor="end">DBA</text><text x="204.7" y="279" font-size="12" font-weight="600" fill="#1f2937">4 次</text><rect x="104" y="296" width="94.7" height="18" rx="3" fill="#2563eb"/><text x="96" y="311" font-size="12" fill="#1f2937" text-anchor="end">数仓</text><text x="204.7" y="311" font-size="12" font-weight="600" fill="#1f2937">4 次</text><rect x="104" y="328" width="71.1" height="18" rx="3" fill="#2563eb"/><text x="96" y="343" font-size="12" fill="#1f2937" text-anchor="end">数据标注</text><text x="181.1" y="343" font-size="12" font-weight="600" fill="#1f2937">3 次</text><rect x="104" y="360" width="47.4" height="18" rx="3" fill="#2563eb"/><text x="96" y="375" font-size="12" fill="#1f2937" text-anchor="end">C++</text><text x="157.4" y="375" font-size="12" font-weight="600" fill="#1f2937">2 次</text></svg>
+</div>
+</section>
+
+<section>
+<h2><span class="n">3</span>哪些技能真的涨薪</h2>
+<p class="q">业务问题：学这项技术，薪资回报到底有多少？</p>
+<div class="card">
+<h3>技能薪资溢价（相对大数据岗中位 14500 元）</h3>
+<p class="hint">只统计出现 ≥3 次的技能。绿色向右 = 高于整体中位，灰色向左 = 低于整体中位。</p>
+<svg viewBox="0 0 640 360" width="100%" preserveAspectRatio="xMidYMid meet" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB',sans-serif"><line x1="327.0" y1="6" x2="327.0" y2="338" stroke="#e5e7eb" stroke-width="1"/><rect x="327.0" y="8" width="217.0" height="17" rx="2" fill="#0d9488"/><text x="545.0" y="24" font-size="13" font-weight="700" fill="#0d9488" text-anchor="start">›</text><text x="104" y="22" font-size="12" fill="#1f2937" text-anchor="end">数据中台</text><text x="552.0" y="22" font-size="11" font-weight="600" fill="#0d9488" text-anchor="start">+30500（超轴）</text><rect x="327.0" y="38" width="10.8" height="17" rx="2" fill="#0d9488"/><text x="104" y="52" font-size="12" fill="#1f2937" text-anchor="end">数据治理</text><text x="345.9" y="52" font-size="11" font-weight="600" fill="#0d9488" text-anchor="start">+500</text><rect x="327.0" y="68" width="10.8" height="17" rx="2" fill="#0d9488"/><text x="104" y="82" font-size="12" fill="#1f2937" text-anchor="end">Java</text><text x="345.9" y="82" font-size="11" font-weight="600" fill="#0d9488" text-anchor="start">+500</text><rect x="327.0" y="98" width="10.8" height="17" rx="2" fill="#0d9488"/><text x="104" y="112" font-size="12" fill="#1f2937" text-anchor="end">数据仓库</text><text x="345.9" y="112" font-size="11" font-weight="600" fill="#0d9488" text-anchor="start">+500</text><rect x="327.0" y="128" width="10.8" height="17" rx="2" fill="#0d9488"/><text x="104" y="142" font-size="12" fill="#1f2937" text-anchor="end">Python</text><text x="345.9" y="142" font-size="11" font-weight="600" fill="#0d9488" text-anchor="start">+500</text><rect x="316.1" y="158" width="10.8" height="17" rx="2" fill="#94a3b8"/><text x="104" y="172" font-size="12" fill="#1f2937" text-anchor="end">大模型</text><text x="308.1" y="172" font-size="11" font-weight="600" fill="#6b7280" text-anchor="end">-500</text><rect x="261.9" y="188" width="65.1" height="17" rx="2" fill="#94a3b8"/><text x="104" y="202" font-size="12" fill="#1f2937" text-anchor="end">DBA</text><text x="253.9" y="202" font-size="11" font-weight="600" fill="#6b7280" text-anchor="end">-3000</text><rect x="229.3" y="218" width="97.7" height="17" rx="2" fill="#94a3b8"/><text x="104" y="232" font-size="12" fill="#1f2937" text-anchor="end">数据库</text><text x="221.3" y="232" font-size="11" font-weight="600" fill="#6b7280" text-anchor="end">-4500</text><rect x="229.3" y="248" width="97.7" height="17" rx="2" fill="#94a3b8"/><text x="104" y="262" font-size="12" fill="#1f2937" text-anchor="end">ETL</text><text x="221.3" y="262" font-size="11" font-weight="600" fill="#6b7280" text-anchor="end">-4500</text><rect x="229.3" y="278" width="97.7" height="17" rx="2" fill="#94a3b8"/><text x="104" y="292" font-size="12" fill="#1f2937" text-anchor="end">数仓</text><text x="221.3" y="292" font-size="11" font-weight="600" fill="#6b7280" text-anchor="end">-4500</text><rect x="142.5" y="308" width="184.5" height="17" rx="2" fill="#94a3b8"/><text x="104" y="322" font-size="12" fill="#1f2937" text-anchor="end">数据标注</text><text x="134.5" y="322" font-size="11" font-weight="600" fill="#6b7280" text-anchor="end">-8500</text><text x="327.0" y="354" font-size="10" fill="#6b7280" text-anchor="middle">基准：大数据岗位薪资中位 14500 元（坐标上限 ±10000）</text></svg>
+</div>
+</section>
+
+<div class="grid">
+<div class="card">
+<h3>大数据岗学历要求</h3>
+<p class="hint">本科 78 个、大专仅 4 个（4.3%）——学历是硬门槛。</p>
+<svg viewBox="0 0 640 144" width="100%" preserveAspectRatio="xMidYMid meet" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB',sans-serif"><rect x="104" y="8" width="23.1" height="18" rx="3" fill="#d97706"/><text x="96" y="23" font-size="12" fill="#1f2937" text-anchor="end">大专</text><text x="133.1" y="23" font-size="12" font-weight="600" fill="#1f2937">4 个（4%）</text><rect x="104" y="40" width="34.6" height="18" rx="3" fill="#d97706"/><text x="96" y="55" font-size="12" fill="#1f2937" text-anchor="end">学历不限</text><text x="144.6" y="55" font-size="12" font-weight="600" fill="#1f2937">6 个（6%）</text><rect x="104" y="72" width="450.0" height="18" rx="3" fill="#d97706"/><text x="96" y="87" font-size="12" fill="#1f2937" text-anchor="end">本科</text><text x="560.0" y="87" font-size="12" font-weight="600" fill="#1f2937">78 个（83%）</text><rect x="104" y="104" width="34.6" height="18" rx="3" fill="#d97706"/><text x="96" y="119" font-size="12" fill="#1f2937" text-anchor="end">硕士</text><text x="144.6" y="119" font-size="12" font-weight="600" fill="#1f2937">6 个（6%）</text></svg>
+</div>
+<div class="card">
+<h3>大数据岗经验要求</h3>
+<p class="hint">集中在 3-5 年与 5-10 年，应届直接切入难度大。</p>
+<svg viewBox="0 0 640 400" width="100%" preserveAspectRatio="xMidYMid meet" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB',sans-serif"><rect x="104" y="8" width="450.0" height="18" rx="3" fill="#d97706"/><text x="96" y="23" font-size="12" fill="#1f2937" text-anchor="end">5-10年</text><text x="560.0" y="23" font-size="12" font-weight="600" fill="#1f2937">29 个</text><rect x="104" y="40" width="419.0" height="18" rx="3" fill="#d97706"/><text x="96" y="55" font-size="12" fill="#1f2937" text-anchor="end">3-5年</text><text x="529.0" y="55" font-size="12" font-weight="600" fill="#1f2937">27 个</text><rect x="104" y="72" width="124.1" height="18" rx="3" fill="#d97706"/><text x="96" y="87" font-size="12" fill="#1f2937" text-anchor="end">经验不限</text><text x="234.1" y="87" font-size="12" font-weight="600" fill="#1f2937">8 个</text><rect x="104" y="104" width="124.1" height="18" rx="3" fill="#d97706"/><text x="96" y="119" font-size="12" fill="#1f2937" text-anchor="end">5年以上</text><text x="234.1" y="119" font-size="12" font-weight="600" fill="#1f2937">8 个</text><rect x="104" y="136" width="124.1" height="18" rx="3" fill="#d97706"/><text x="96" y="151" font-size="12" fill="#1f2937" text-anchor="end">3年以上</text><text x="234.1" y="151" font-size="12" font-weight="600" fill="#1f2937">8 个</text><rect x="104" y="168" width="108.6" height="18" rx="3" fill="#d97706"/><text x="96" y="183" font-size="12" fill="#1f2937" text-anchor="end">1-3年</text><text x="218.6" y="183" font-size="12" font-weight="600" fill="#1f2937">7 个</text><rect x="104" y="200" width="31.0" height="18" rx="3" fill="#d97706"/><text x="96" y="215" font-size="12" fill="#1f2937" text-anchor="end">10年以上</text><text x="141.0" y="215" font-size="12" font-weight="600" fill="#1f2937">2 个</text><rect x="104" y="232" width="15.5" height="18" rx="3" fill="#d97706"/><text x="96" y="247" font-size="12" fill="#1f2937" text-anchor="end">1-5年</text><text x="125.5" y="247" font-size="12" font-weight="600" fill="#1f2937">1 个</text><rect x="104" y="264" width="15.5" height="18" rx="3" fill="#d97706"/><text x="96" y="279" font-size="12" fill="#1f2937" text-anchor="end">2-10年</text><text x="125.5" y="279" font-size="12" font-weight="600" fill="#1f2937">1 个</text><rect x="104" y="296" width="15.5" height="18" rx="3" fill="#d97706"/><text x="96" y="311" font-size="12" fill="#1f2937" text-anchor="end">2年以上</text><text x="125.5" y="311" font-size="12" font-weight="600" fill="#1f2937">1 个</text><rect x="104" y="328" width="15.5" height="18" rx="3" fill="#d97706"/><text x="96" y="343" font-size="12" fill="#1f2937" text-anchor="end">4年以上</text><text x="125.5" y="343" font-size="12" font-weight="600" fill="#1f2937">1 个</text><rect x="104" y="360" width="15.5" height="18" rx="3" fill="#d97706"/><text x="96" y="375" font-size="12" fill="#1f2937" text-anchor="end">8年以上</text><text x="125.5" y="375" font-size="12" font-weight="600" fill="#1f2937">1 个</text></svg>
+</div>
+</div>
+
+<section style="margin-top:26px;">
+<h2><span class="n">4</span>学习优先级清单</h2>
+<p class="q">业务问题：时间和精力有限，先学哪个、后学哪个？</p>
+<div class="card">
+<h3>技能 × 需求频次 × 薪资溢价 → 优先级</h3>
+<p class="hint">规则：高频且涨薪 = P0；高频不涨薪 = P1 必会基础；低频但涨薪 = P1 加分项。</p>
+<table>
+<thead><tr><th>技能</th><th>出现次数</th><th>薪资中位</th><th>相对溢价</th><th>优先级</th></tr></thead>
+<tbody><tr><td class="s">数据治理</td><td>19</td><td>15000</td><td class="up">+500</td><td><span class="pill" style="background:#dc262618;color:#dc2626">P0 优先学</span></td></tr><tr><td class="s">数据库</td><td>17</td><td>10000</td><td class="down">-4500</td><td><span class="pill" style="background:#d9770618;color:#d97706">P1 必会基础</span></td></tr><tr><td class="s">Java</td><td>7</td><td>15000</td><td class="up">+500</td><td><span class="pill" style="background:#dc262618;color:#dc2626">P0 优先学</span></td></tr><tr><td class="s">大模型</td><td>7</td><td>14000</td><td class="down">-500</td><td><span class="pill" style="background:#d9770618;color:#d97706">P1 必会基础</span></td></tr><tr><td class="s">数据中台</td><td>5</td><td>45000</td><td class="up">+30500</td><td><span class="pill" style="background:#2563eb18;color:#2563eb">P1 加分项</span></td></tr><tr><td class="s">数据仓库</td><td>5</td><td>15000</td><td class="up">+500</td><td><span class="pill" style="background:#2563eb18;color:#2563eb">P1 加分项</span></td></tr><tr><td class="s">ETL</td><td>5</td><td>10000</td><td class="down">-4500</td><td><span class="pill" style="background:#6b728018;color:#6b7280">P2 了解即可</span></td></tr><tr><td class="s">Python</td><td>4</td><td>15000</td><td class="up">+500</td><td><span class="pill" style="background:#2563eb18;color:#2563eb">P1 加分项</span></td></tr><tr><td class="s">DBA</td><td>4</td><td>11500</td><td class="down">-3000</td><td><span class="pill" style="background:#6b728018;color:#6b7280">P2 了解即可</span></td></tr><tr><td class="s">数仓</td><td>4</td><td>10000</td><td class="down">-4500</td><td><span class="pill" style="background:#6b728018;color:#6b7280">P2 了解即可</span></td></tr><tr><td class="s">数据标注</td><td>3</td><td>6000</td><td class="down">-8500</td><td><span class="pill" style="background:#94a3b818;color:#94a3b8">P3 暂缓</span></td></tr></tbody>
+</table>
+</div>
+</section>
+
+<section>
+<div class="card">
+<h3>技能共现（出现 ≥2 次的组合）</h3>
+<p class="hint">共现样本稀疏，仅作方向参考，不作为结论依据。</p>
+<ul class="pairs"><li><b>C++</b> + <b>Java</b> <span class='muted'>（2 次）</span></li><li><b>C++</b> + <b>Python</b> <span class='muted'>（2 次）</span></li><li><b>Java</b> + <b>Python</b> <span class='muted'>（2 次）</span></li><li><b>DBA</b> + <b>数据库</b> <span class='muted'>（2 次）</span></li></ul>
+</div>
+</section>
+
+<section>
+<div class="insight">
+<h3>可写进简历 / 面试讲的结论</h3>
+<ul>
+<li><b>大数据岗的技能关键词高度集中在「数据工程」而非「算法」。</b>出现最多的是数据治理（19 次）、数据库（17 次）、数据仓库/数仓（9 次）、ETL（5 次）——这说明该岗位族的核心是<b>把数据管起来、跑通</b>，不是训模型。</li>
+<li><b>Python 与 Java 是通用底座。</b>两者出现次数不算最高（各 4、7 次），但都是基准线以上的薪资，属于"不会就进不去、会了不加分"的必备项。</li>
+<li><b>数据中台是薪资最高但样本最少的方向（5 次，中位 45000）。</b>样本太小不宜当成规律，但它提示：<b>平台化/中台建设类岗位溢价明显</b>，可作为长期目标而非入门方向。</li>
+<li><b>数据标注是明确的低薪陷阱。</b>3 次出现，中位 6000 元，比整体低 8500 元。作为过渡可以，不要当职业方向。</li>
+<li><b>学历门槛比想象中硬。</b>大数据岗 94 条里大专只有 4 个（4.3%），本科 78 个；经验要求集中在 3-10 年。<b>专升本 + 项目经验，是进入这个岗位族几乎绕不开的两步。</b></li>
+</ul>
+</div>
+</section>
+
+<footer>
+数据来源：猎聘·成都公开岗位快照（2026-09-10），技能字段为岗位名称词典抽取，仅供学习研究与求职分析。
+样本 1200 条 · 大数据类 94 条（其中 77 条含技能标签）
+</footer>
+</div></body></html>

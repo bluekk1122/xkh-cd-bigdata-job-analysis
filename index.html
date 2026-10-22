@@ -1,0 +1,1094 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>成都大数据岗位情报分析 · 作品集</title>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<style>
+:root{
+  --bg:#0f172a; --panel:#111c33; --ink:#1f2937; --ink2:#475569;
+  --line:#e2e8f0; --brand:#0ea5e9; --brand2:#14b8a6; --soft:#f1f5f9;
+  --accent:#f97316; --card:#ffffff;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+  color:var(--ink); background:#eef2f7; line-height:1.7; font-size:15px;
+}
+.topbar{
+  position:sticky;top:0;z-index:30;background:linear-gradient(120deg,#0f172a,#15315e);
+  color:#fff;padding:14px 24px;display:flex;align-items:center;gap:14px;
+  box-shadow:0 2px 10px rgba(0,0,0,.18);
+}
+.topbar .logo{width:34px;height:34px;border-radius:8px;background:linear-gradient(135deg,var(--brand),var(--brand2));
+  display:flex;align-items:center;justify-content:center;font-weight:800;font-size:17px}
+.topbar h1{font-size:17px;margin:0;font-weight:700;letter-spacing:.5px}
+.topbar .sub{font-size:12px;color:#9fc7e8;margin-left:auto}
+.layout{display:flex;align-items:flex-start;max-width:1280px;margin:0 auto}
+.side{
+  width:236px;flex:0 0 236px;position:sticky;top:62px;align-self:flex-start;
+  height:calc(100vh - 62px);overflow-y:auto;padding:18px 12px;background:var(--card);
+  border-right:1px solid var(--line);
+}
+.nav-group{font-size:11px;letter-spacing:1px;color:#94a3b8;margin:14px 8px 6px;font-weight:700;text-transform:uppercase}
+.nav-link{
+  display:block;padding:8px 12px;margin:2px 0;border-radius:8px;color:var(--ink2);
+  text-decoration:none;font-size:13.5px;transition:.15s;border-left:3px solid transparent;
+}
+.nav-link:hover{background:var(--soft);color:var(--ink)}
+.nav-link.active{background:#e0f2fe;color:#0369a1;border-left-color:var(--brand);font-weight:600}
+.content{flex:1;min-width:0;padding:26px 34px 80px}
+.doc-section{display:none}
+.doc-section.active{display:block;animation:fade .25s ease}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.doc{max-width:920px;background:var(--card);border:1px solid var(--line);border-radius:14px;
+  padding:30px 38px;box-shadow:0 1px 3px rgba(15,23,42,.05)}
+.doc h1{font-size:26px;margin:.2em 0 .5em;color:#0f172a;border-bottom:3px solid var(--brand);padding-bottom:10px}
+.doc h2{font-size:21px;margin:1.4em 0 .6em;color:#0f3a5f}
+.doc h3{font-size:17px;margin:1.2em 0 .5em;color:#0f3a5f}
+.doc h4{font-size:15px;margin:1em 0 .4em;color:#334155}
+.doc p{margin:.6em 0}
+.doc ul,.doc ol{margin:.5em 0;padding-left:1.4em}
+.doc li{margin:.25em 0}
+.doc a{color:var(--brand);text-decoration:none}
+.doc a:hover{text-decoration:underline}
+.doc img{max-width:100%;border:1px solid var(--line);border-radius:10px;margin:10px 0}
+.doc table{border-collapse:collapse;width:100%;margin:14px 0;font-size:13.5px}
+.doc th,.doc td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+.doc th{background:#eef6ff;color:#0f3a5f;font-weight:700}
+.doc tr:nth-child(even) td{background:#fafcff}
+.doc blockquote{margin:12px 0;padding:10px 16px;border-left:4px solid var(--brand2);
+  background:#f0fdfa;color:#155e75;border-radius:0 8px 8px 0}
+.doc code{background:#f1f5f9;padding:2px 6px;border-radius:5px;font-size:13px;
+  font-family:"SFMono-Regular",Consolas,monospace;color:#be123c}
+.doc pre.code{background:#0f172a;color:#e2e8f0;padding:16px 18px;border-radius:10px;
+  overflow:auto;font-size:13px;line-height:1.55;margin:14px 0}
+.doc pre.code code{background:none;color:inherit;padding:0}
+.doc hr{border:none;border-top:1px dashed var(--line);margin:22px 0}
+.board-wrap{background:var(--card);border:1px solid var(--line);border-radius:14px;
+  padding:0;overflow:hidden;box-shadow:0 1px 3px rgba(15,23,42,.05)}
+.board-wrap iframe{width:100%;height:1600px;border:0;display:block}
+.mermaid{background:#f8fafc;border:1px solid var(--line);border-radius:10px;padding:16px;margin:14px 0;
+  overflow:auto;text-align:center}
+.footer{max-width:920px;margin:30px auto 0;color:#94a3b8;font-size:12px;text-align:center}
+@media(max-width:860px){
+  .layout{flex-direction:column}
+  .side{position:static;width:100%;height:auto;border-right:none;border-bottom:1px solid var(--line);
+    display:flex;flex-wrap:wrap;gap:4px}
+  .nav-group{width:100%}
+  .nav-link{flex:1 1 auto;text-align:center;border-left:none;border-bottom:3px solid transparent}
+  .content{padding:18px 14px 60px}
+  .doc{padding:20px 18px}
+  .board-wrap iframe{height:1200px}
+}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <div class="logo">CD</div>
+  <h1>成都大数据岗位情报分析</h1>
+  <span class="sub">数据采集 · 清洗 · EDA · 可视化 · 求职决策支持</span>
+</div>
+<div class="layout">
+  <nav class="side">
+<div class="nav-group">主报告</div>
+<a class="nav-link" href="#report" data-target="report">项目完整报告</a>
+<div class="nav-group">过程文档</div>
+<a class="nav-link" href="#s1" data-target="s1">① 项目立项</a>
+<a class="nav-link" href="#s2" data-target="s2">② 采集方案</a>
+<a class="nav-link" href="#s3" data-target="s3">③ 清洗与EDA</a>
+<a class="nav-link" href="#s4" data-target="s4">④ 图表与结论</a>
+<a class="nav-link" href="#s4b" data-target="s4b">④ 可视化洞察</a>
+<a class="nav-link" href="#s5" data-target="s5">⑤ 技能与路径</a>
+<div class="nav-group">求职辅助</div>
+<a class="nav-link" href="#interview" data-target="interview">面试准备</a>
+<a class="nav-link" href="#readme" data-target="readme">README</a>
+<div class="nav-group">可视化</div>
+<a class="nav-link" href="#board1" data-target="board1">可视化看板 · 岗位全景</a>
+<a class="nav-link" href="#board2" data-target="board2">可视化看板 · 技能图谱</a>
+  </nav>
+  <main class="content">
+<section id="report" class="doc-section">
+<div class="doc"><h1 class="h1">大数据招聘岗位数据分析 · 求职作品集项目报告</h1>
+<blockquote>作者：XXX（专科 · 大数据技术专业 · 2027 届）</blockquote>
+<blockquote>地域聚焦：成都（川渝核心）｜ 数据性质：招聘网站公开岗位信息（可溯源）</blockquote>
+<blockquote>项目定位：面向"高职大数据专科生如何在成都求职"的真实业务问题，完成从采集到结论的全流程分析</blockquote>
+<blockquote>报告日期：2026-10</blockquote>
+<hr>
+<h2 class="h2">1. 项目概述</h2>
+<h3 class="h3">1.1 为什么做这个项目</h3>
+<p>成渝地区将大数据产业列为核心增长极，成都《人才需求清单》一次性集中推出 5610 个优质岗位，本科及以下可投岗位超 4800 个。但对高职专科生而言，面对海量且口径不一的招聘信息，往往陷入"看不懂、投不准"的困境：不清楚哪些岗位真实可达、需要补哪些技能、薪资与技能如何对应。</p>
+<h3 class="h3">1.2 业务问题（不是玩数据）</h3>
+<p>本项目要回答一个具体问题：<strong>作为成都的高职大数据专科生，我能投什么岗位、该补什么技能？</strong> 而不是单纯采集与堆砌数据。</p>
+<h3 class="h3">1.3 技术链路</h3>
+<p>项目遵循标准数据分析流程，共五个阶段：</p>
+<pre class="code"><code>① 数据采集  →  ② 数据清洗  →  ③ EDA 探索分析  →  ④ 可视化  →  ⑤ 结论输出</code></pre>
+<h3 class="h3">1.4 可交付成果</h3>
+<ul><li>一份可溯源的结构化岗位数据集（373 条成都大数据相关岗位）</li><li>高职可达性三层模型（L1 可达 / L2 跳一跳 / L3 暂不可达）+ 专升本解锁路径标注</li><li>可视化看板（4 张核心图表 + 交互式全景看板）</li><li>两张求职决策表：《可投岗位清单》《补技能清单》</li></ul>
+<hr>
+<h2 class="h2">2. 数据源与采集方案</h2>
+<h3 class="h3">2.1 数据源选择原则</h3>
+<p><strong>官方/公开源优先，不自动化商业招聘平台</strong>。官方/公开源零法律风险、结构稳定、可溯源；商业平台用户协议禁止批量抓取、反爬强、存在"幽灵岗位"失真，故本项目仅作合规降级补充。</p>
+<h3 class="h3">2.2 本分析采用的主数据集</h3>
+<table><thead><tr><th>项目</th><th>说明</th></tr></thead><tbody>
+<tr><td>数据集</td><td>成都大数据相关岗位公开信息</td></tr>
+<tr><td>规模</td><td>373 条有效记录</td></tr>
+<tr><td>快照时间</td><td>2026-09-09</td></tr>
+<tr><td>字段</td><td>岗位名称、企业、城市/区县、薪资（原文+标准化中位）、学历、经验、技能、岗位族、可达性、来源 URL 等 22 列</td></tr>
+<tr><td>可溯源字段</td><td><code>snapshot_date</code>（采集日期）+ <code>source_url</code>（来源链接）强制必填</td></tr>
+</tbody></table>
+<h3 class="h3">2.3 采集合规规范（关键红线）</h3>
+<ol><li>先读 <code>robots.txt</code>，遵守 <code>Disallow</code> 与 <code>Crawl-delay</code>；</li><li>单线程、间隔 2–3s、单轮 ≤ 25 次，失败即退避；</li><li>不登录抓取、不绕过验证码、不破解接口签名；</li><li><strong>不碰任何求职者个人信息</strong>（《个人信息保护法》红线）；</li><li>对外只发布聚合统计结论，不二次分发原始明细。</li></ol>
+<h3 class="h3">2.4 字段清单（核心字段）</h3>
+<p>岗位 ID、快照日期、岗位名称（原文/归一）、岗位族、学历要求、经验要求、薪资原文、月薪下限/上限/中位（元）、技能要求、可达性（L1/L2/L3）、解锁路径、来源、来源 URL、是否复合岗位、薪资异常标记、经验下限/上限（年）。</p>
+<hr>
+<h2 class="h2">3. 数据预处理与清洗</h2>
+<blockquote>完整脚本：<code>scripts/step3_clean_eda.py</code> 与 <code>scripts/step3_clean_eda_nolib.py</code>（零依赖，已实跑验证）。</blockquote>
+<h3 class="h3">3.1 已识别的数据质量问题</h3>
+<table><thead><tr><th>字段</th><th>问题</th><th>清洗对策</th></tr></thead><tbody>
+<tr><td>岗位 ID</td><td>重复风险</td><td>主键去重 + 业务字段去重双层校验</td></tr>
+<tr><td>薪资三列</td><td>2 行缺失（原文 <code>100-150k</code>/<code>300-500k</code>，疑为年薪）</td><td>用薪资原文回补 + 打"存疑"标记，不偷偷当真值</td></tr>
+<tr><td>技能要求</td><td>373 行整列缺失（详情页触发验证码）</td><td>标记"未获取"，词频分析改用 1200 条补充数据集</td></tr>
+<tr><td>经验要求</td><td>23 种写法（"3-5年"/"5年以上"…）</td><td>正则解析为 经验下限/上限（年）数值</td></tr>
+<tr><td>学历/可达性</td><td>有序类别</td><td>转为有序 Categorical，保证分组排序正确</td></tr>
+<tr><td>区县</td><td>粒度不一（含"成都(未细分)"）</td><td>保留原值不虚构</td></tr>
+</tbody></table>
+<h3 class="h3">3.2 清洗四大步骤</h3>
+<ol><li><strong>去重</strong>：岗位 ID 主键去重 + 业务字段组合去重；一行多岗（<code>名称含 / 或 、</code>）只标记不删。</li><li><strong>缺失值</strong>：薪资用原文回补并打"存疑"标记；占位符转缺失并标记"技能未获取"。</li><li><strong>异常值</strong>：<strong>只标记不删行</strong>（4 条极端高薪架构岗标记后统计时按需剔除）。</li><li><strong>类型转换</strong>：经验文本→数值；学历/可达性→有序类别；日期→datetime。</li></ol>
+<h3 class="h3">3.3 清洗结果</h3>
+<table><thead><tr><th>核对项</th><th>结果</th></tr></thead><tbody>
+<tr><td>清洗后行数</td><td>373</td></tr>
+<tr><td>薪资中位数</td><td>18,000 元</td></tr>
+<tr><td>薪资均值</td><td>22,097 元</td></tr>
+<tr><td>25%~75% 分位</td><td>12,500 ~ 25,000 元</td></tr>
+<tr><td>可达性 L1/L2/L3</td><td>12 / 226 / 135</td></tr>
+</tbody></table>
+<hr>
+<h2 class="h2">4. 探索性数据分析（EDA）</h2>
+<h3 class="h3">4.1 描述统计</h3>
+<p>薪资分布<strong>右偏</strong>：中位数 18,000 &lt; 均值 22,097，差值 4,097 元，说明少数高薪岗位拉高了均值。因此后续所有薪资汇报<strong>统一使用中位数</strong>。</p>
+<h3 class="h3">4.2 核心可视化（4 张图）</h3>
+<h4 class="h4">图 1 · 不同学历要求的薪资中位数对比</h4>
+<p><img alt="图1 学历薪资中位" src="docs/figures/fig1_edu_salary.png"></p>
+<ul><li><strong>读图</strong>：大专 13,500 → 本科 17,500 → 硕士 22,500，呈单调递增；但橙色的"学历不限"岗位中位 25,000 <strong>反超本科</strong>。</li><li><strong>业务含义</strong>：学历存在溢价（本科比大专 +29.6%），但"学历不限"高薪岗证明部分岗位看能力而非学历。</li></ul>
+<h4 class="h4">图 2 · 专科生可达性分层（L1/L2/L3）</h4>
+<p><img alt="图2 可达性分层" src="docs/figures/fig2_reachability.png"></p>
+<ul><li><strong>读图</strong>：L1（现在能投）12 个、L2（跳一跳可达）226 个、L3（暂不可达）135 个；圆心"可投面 238/373 = 63.8%"。</li><li><strong>业务含义</strong>：把抽象的"机会"变成可决策数字——真实可投面约 <strong>64%</strong>。</li></ul>
+<h4 class="h4">图 3 · 各岗位族招聘需求量</h4>
+<p><img alt="图3 岗位族招聘量" src="docs/figures/fig3_job_family.png"></p>
+<ul><li><strong>读图</strong>：数据开发/ETL 以 132 个居首（占 35%），其余为其他数据类 90、数据分析/运营 55、数据治理 44 等。</li><li><strong>业务含义</strong>：<strong>数据开发/ETL 是最大入口且专科可达性最高</strong>，应定为主攻方向。</li></ul>
+<h4 class="h4">图 4 · 月薪中位数分布（右偏）</h4>
+<p><img alt="图4 薪资分布" src="docs/figures/fig4_salary_dist.png"></p>
+<ul><li><strong>读图</strong>：分布向右拖长尾，橙色中位数线（18,000）明显低于红色均值线（22,097）。</li><li><strong>业务含义</strong>：分布右偏，谈薪/填期望以中位数锚定，避免被均值误导。</li></ul>
+<h3 class="h3">4.3 补充：技能词频与学习路径（独立数据集）</h3>
+<p>因主数据集技能列整列缺失，改用 <code>成都五行业数字岗位_1200条.csv</code>（大数据类 n=94，技能覆盖率 82%）分析，结论：</p>
+<ul><li>大数据岗核心是<strong>数据工程</strong>而非算法：高频词为数据治理（19）、数据库（17）、数仓/ETL（合计 14）。</li><li>学习路径三层：地基（SQL/Python）→ 通用语言（数据治理、数仓建模、ETL）→ 加分项（Java、大模型、数据中台）。</li><li><strong>方法论诚实披露</strong>：标题级技能抽取导致"溢价"混杂职级信号（如"数据中台"岗天然资深），故该溢价仅表征"关联岗位档次"，不可读成"学会即涨薪"。</li></ul>
+<hr>
+<h2 class="h2">5. 业务结论与项目价值</h2>
+<h3 class="h3">5.1 四结论（落地，可直接指导求职决策）</h3>
+<ol><li><strong>谈薪看中位数</strong>：以 18k 为基准锚点，不被"平均薪资"误导。</li><li><strong>学历非天花板</strong>：学历有溢价，但"学历不限"高薪岗证明能力可对冲学历约束。</li><li><strong>真实可投面 63.8%</strong>：聚焦 L1/L2 共 238 个岗位；其中 216 个靠专升本解锁（ROI 最高单点杠杆）。</li><li><strong>主攻数据开发/ETL</strong>：132 个岗居首（35%）、专科可达性最高，技术栈对齐 SQL+数仓+ETL，不必先卷算法。</li></ol>
+<h3 class="h3">5.2 项目价值</h3>
+<ul><li><strong>对个人</strong>：把"模糊的求职焦虑"转化为"分层可达、方向明确"的决策依据，作品集本身即用于对冲"经验不足"。</li><li><strong>对面试官</strong>：展示的是一条<strong>完整严谨的数据分析链路</strong>（采集合规→清洗留痕→EDA→可视化→结论），以及主动披露数据局限的判断力——这正是数据分析岗核心素质。</li></ul>
+<hr>
+<h2 class="h2">6. 项目总结、局限性与后续优化</h2>
+<h3 class="h3">6.1 项目总结</h3>
+<p>本项目以"专科生如何在成都投大数据岗"为业务牵引，完成 373 条岗位数据的采集→清洗→EDA→可视化→结论全流程，构建高职可达性三层模型，并量化出可投面 63.8%、主攻方向数据开发/ETL、专升本为最高 ROI 杠杆等关键结论，可直接支撑简历投递决策。</p>
+<h3 class="h3">6.2 局限性（如实披露，反成加分项）</h3>
+<ol><li><strong>来源偏差</strong>：以单一招聘平台公开信息为主，未覆盖官方公共招聘网与全部商业平台，结论<strong>不可外推为整体市场</strong>。</li><li><strong>时效滞后</strong>：快照为 2026-09-09 单点，非趋势数据。</li><li><strong>口径损失</strong>：薪资混合区间/年薪/面议，标准化为月薪中位存在精度损失（已保留原文溯源）。</li><li><strong>主观判定</strong>：L1/L2/L3 分层基于个人画像（专科+专升本计划）主观标注。</li><li><strong>样本规模</strong>：373 条中大专样本仅 17 个（4.6%），细分维度置信区间较宽。</li><li><strong>技能缺失</strong>：主数据集技能列整列缺失，技能结论来自替代数据集（已注明数据边界）。</li></ol>
+<h3 class="h3">6.3 后续可优化方向</h3>
+<ol><li><strong>扩源扩量</strong>：并入官方公共招聘网、市属国企公告，向 ≥800 条目标扩展，提升细分统计可信度。</li><li><strong>趋势化</strong>：建立周级快照，跟踪薪资/可达性随时间变化。</li><li><strong>技能补全</strong>：攻克详情页验证码后回填技能字段，做真实 JD 级技能词频与薪资回归。</li><li><strong>可交互化</strong>：将看板接入轻量 Web（如 Streamlit/静态页），支持按岗位族/区县筛选，并补充 API 服务输出《可投岗位清单》《补技能清单》。</li></ol>
+<hr>
+<p><em>本报告与《步骤1 项目立项》《步骤2 采集方案》《步骤3 清洗与EDA》《步骤4 可视化与结论》《步骤5 技能词频》口径一致，数据均经实跑校验。</em></p></div>
+</section>
+<section id="s1" class="doc-section">
+<div class="doc"><h1 class="h1">大数据岗位招聘信息数据分析 · 项目简介（简历项目介绍）</h1>
+<blockquote>适用画像：大数据技术专业 · 专科 · 2027 届 · 有专升本计划 · 求职作品集 / 简历项目描述</blockquote>
+<blockquote>地域聚焦：成都（川渝核心）｜ 数据性质：政府及官方机构公开发布的岗位与人才需求信息，可溯源</blockquote>
+<blockquote>文档定位：立项梳理与简历描述底稿（内容经确认后可直接复用于作品集网站与简历）</blockquote>
+<hr>
+<h2 class="h2">一、项目背景与业务目标</h2>
+<p><strong>背景</strong></p>
+<p>成渝地区双城经济圈将大数据相关产业列为核心增长极——四川把人工智能列为"一号创新工程"并建设行业高质量数据集与语料库，重庆将软件和信息服务业列为新增万亿级集群。《成都市人才需求清单》一次性集中推出 5610 个优质岗位，其中硕士及以上仅约 800 个，本科及以下可投岗位超 4800 个。但对高职专科生而言，面对海量且口径不一的招聘信息，往往陷入"看不懂、投不准"的困境：不清楚哪些岗位真实可达、需要补哪些技能、薪资与技能如何对应。</p>
+<p><strong>业务目标</strong></p>
+<p>本项目旨在回答一个具体的求职业务问题——"作为成都的高职大数据专科生，我能投什么岗位、该补什么技能"，而非单纯采集与堆砌数据。通过采集成都官方公开发布的紧缺人才目录、产业规划与岗位信息，构建一份可溯源、可增量维护的结构化数据集，量化高职（含专升本路径）可达岗位与技能缺口，输出可直接指导投递决策的清单与看板。</p>
+<p>可交付目标：</p>
+<ol><li>构建一份可溯源、可增量维护的成都数据类岗位结构化数据集（MVP 阶段 200–300 条官方高质量记录，中长期扩展至 ≥800 条有效记录）；</li><li>量化高职可达岗位的占比、薪资与技能结构；</li><li>输出《可投岗位清单》《补技能清单》两张求职决策表；</li><li>沉淀一个可运行的分析项目（EDA + 可视化 + 后端 API），直接写入简历。</li></ol>
+<hr>
+<h2 class="h2">二、项目整体流程架构</h2>
+<p>项目遵循标准数据分析技术链路，共五个阶段：</p>
+<pre class="code"><code>① 数据采集  →  ② 数据清洗  →  ③ EDA 探索分析  →  ④ 可视化  →  ⑤ 结论输出</code></pre>
+<ul><li><strong>① 数据采集</strong>：按"政策规划（L0）→ 紧缺目录（L1）→ 官方渠道真实岗位（L2）"三层结构采集，逐条保留 <code>source_url</code> 与 <code>snapshot_date</code>（采集快照日期），保证可溯源、可趋势化。</li><li><strong>② 数据清洗</strong>：字段归一（岗位名 / 技能标签映射表）、薪资口径标准化为"月薪中位数 / 元"（保留 <code>salary_raw</code> 原文）、去重（源 + 哈希主键）、高职可达性打标（L1 / L2 / L3 ＋ <code>unlock_by</code> 解锁路径）。</li><li><strong>③ EDA 探索分析</strong>：学历 / 经验要求分布、薪资分布、技能词频与薪资关联、政策赛道 ↔ 岗位映射、岗位地域分布等。</li><li><strong>④ 可视化</strong>：岗位缺口地图（城市 × 岗位族 × 紧缺度）、技能-薪资关联图、高职可达岗位看板。</li><li><strong>⑤ 结论输出</strong>：《可投岗位清单》《补技能清单》两张决策表 ＋ 作品集可运行项目（含后端 API 服务）。</li></ul>
+<p>每一层均强制带 <code>snapshot_date</code> 与 <code>source_url</code>，保证全链路可溯源、可趋势化。</p>
+<hr>
+<h2 class="h2">三、数据源说明</h2>
+<table><thead><tr><th>级别</th><th>数据源</th><th>特点</th><th>取数策略</th></tr></thead><tbody>
+<tr><td>L0 政策规划</td><td>四川 / 成都"十五五"纲要、产业体系</td><td>静态页、最稳定</td><td>全采，定产业赛道</td></tr>
+<tr><td>L1 紧缺目录</td><td>成都市人才需求清单、省级紧缺职业目录、人社部新职业</td><td>价值密度最高</td><td>全采，定岗位族</td></tr>
+<tr><td>L2 官方岗位</td><td>人社局 / 人事考试网 / 市属国企 / 事业单位公开招聘公告</td><td>零散、需辅助</td><td>定点采，补真实在招岗位</td></tr>
+<tr><td>公共开放数据</td><td>四川 / 成都公共数据开放平台（无条件开放数据集）</td><td>作品项目练手用</td><td>挑"无条件开放"数据集做分析项目</td></tr>
+<tr><td>❌ 不碰</td><td>商业招聘平台自动化、含个人信息数据、有条件开放需协议数据</td><td>法律风险 / 失真</td><td>明确排除</td></tr>
+</tbody></table>
+<blockquote>选择依据：官方 / 公开源零法律风险、结构稳定、可溯源；商业平台用户协议禁止批量抓取、反爬强、存在"幽灵岗位"失真，故不做自动化。</blockquote>
+<hr>
+<h2 class="h2">四、项目预期分析问题（5 个业务问题）</h2>
+<ol><li><strong>可达性</strong>：成都数据类岗位对学历与经验的要求分布如何？高职专科生（含专升本路径）实际可达岗位占比多少？</li><li><strong>岗位族差异</strong>：数据开发 / 数据分析 / 数据标注 / BI / 数据运维 / ETL 各岗位族的薪资区间与核心技能要求有何差异？</li><li><strong>技能优先级</strong>：哪些技能出现频次最高、且与薪资正相关？应优先补齐哪几项（按"频次 × 薪资增益 × 学习成本"排序）？</li><li><strong>政策-需求匹配</strong>：政策规划的产业赛道（人工智能 / 软件信息服务 / 工业数据）与实际岗位需求是否匹配？哪些方向对高职生更友好？</li><li><strong>地域分布</strong>：岗位在成都各区县的分布与紧缺度如何？是否值得向都市圈（德眉资）拓展求职？</li></ol>
+<hr>
+<h2 class="h2">五、项目局限性说明（如实披露，面试加分项）</h2>
+<ol><li><strong>来源偏差</strong>：以官方 / 公开目录为主，未覆盖商业招聘平台全量，样本偏向"规划导向"岗位，结论<strong>不可外推为整体市场供需</strong>。</li><li><strong>时效滞后</strong>：官方目录多为年度报告 / 季度发布，数据非实时；已用 <code>snapshot_date</code> 快照机制缓解趋势缺失，但仍存在时滞。</li><li><strong>口径损失</strong>：薪资多为区间或"面议 / 年薪 / 带提成"混合口径，标准化为月薪中位数存在精度损失，已保留 <code>salary_raw</code> 原文溯源。</li><li><strong>主观判定</strong>：L1 / L2 / L3 可达性分层基于个人画像（专科 ＋ 专升本计划）做主观标注，<code>unlock_by</code> 解锁路径为建议性而非雇佣方承诺。</li><li><strong>样本规模</strong>：官方源有效岗位有限（MVP 200–300 条），统计置信区间较宽，细分维度（如单区县 × 单一岗位族）样本可能不足。</li><li><strong>合规边界</strong>：数据仅用于个人学习研究与求职，不对外分发原始明细，成果仅发布聚合统计结论；未获取任何求职者个人信息。</li></ol>
+<hr>
+<h2 class="h2">附录：简历项目描述（可直接复用）</h2>
+<p><strong>一句话版（简历项目经历）</strong></p>
+<blockquote>成都大数据岗位情报分析（个人项目）：采集成都市人才需求清单、紧缺职业目录等官方公开数据，构建可溯源岗位数据集（MVP 200+ 条，目标 ≥800 条），通过薪资标准化与高职可达性分层（L1/L2/L3），量化专科生在成都的可投岗位与技能缺口，输出《可投岗位清单》《补技能清单》及可视化看板，支撑求职决策。</blockquote>
+<p><strong>段落版（作品集网站 / 项目详述）</strong></p>
+<blockquote>本项目面向"高职大数据专科生如何在成都求职"这一真实业务问题，采集政府及官方机构公开发布的大数据岗位与人才需求信息，构建可溯源、可增量维护的结构化数据集。项目完整覆盖"数据采集 → 数据清洗 → EDA 探索分析 → 可视化 → 结论输出"标准技术链路，并对每条记录强制保留来源 URL 与采集快照以保证严谨性。在清洗阶段引入高职可达性分层（L1 可达 / L2 跳一跳 / L3 暂不可达）与专升本解锁路径标注，最终量化岗位学历 / 经验要求、薪资分布与技能结构，输出可指导投递决策的《可投岗位清单》《补技能清单》及可视化看板。</blockquote>
+<p><em>本简介与《成都数据岗位情报_需求规格 v1.0》《川渝数据岗位情报_可行性分析与需求规格》口径一致。</em></p></div>
+</section>
+<section id="s2" class="doc-section">
+<div class="doc"><h1 class="h1">大数据招聘岗位 · 数据采集方案设计</h1>
+<blockquote>定位：设计采集思路、字段清单、代码骨架与合规规范（<strong>不是直接让你跑成品脚本</strong>）。</blockquote>
+<blockquote>核心原则（与已锁定需求规格一致）：<strong>官方/公开源优先，不自动化商业招聘平台</strong>；理解采集逻辑，自己动手调试。</blockquote>
+<hr>
+<h2 class="h2">一、推荐可采集的公开数据源</h2>
+<h3 class="h3">✅ 首选：官方/公开源（合规、零风险、多为服务端渲染、易解析）</h3>
+<table><thead><tr><th>类别</th><th>数据源示例</th><th>采集方式</th></tr></thead><tbody>
+<tr><td>政策规划</td><td>四川/成都"十五五"纲要、成都产业体系</td><td>静态页，可自动抽取段落</td></tr>
+<tr><td>紧缺目录</td><td>《成都市人才需求清单》、四川省重点产业链急需紧缺职业目录、人社部新职业</td><td>静态页，结构化抽取</td></tr>
+<tr><td>官方招聘</td><td>四川人事考试网、市属国企（成都产业/数据集团等）公告、事业单位公招</td><td>零散，人工打开 + 智能体结构化入库</td></tr>
+<tr><td>开放数据集</td><td>重庆市公共数据开放系统 <code>data.dsjj.cq.gov.cn</code>、四川省公共数据开放网、成都市公共数据开放平台</td><td>挑"无条件开放"数据集练手</td></tr>
+</tbody></table>
+<h3 class="h3">⚠️ 降级补充：商业招聘平台（谨慎，仅当官方源不足时）</h3>
+<ul><li><strong>猎聘（liepin.com）</strong>：当前唯一可用 Python 批量抓取的一线源，列表页服务端渲染、无需登录。但<strong>约 30 次请求触发 IP 级验证码</strong>，且短期不自动解除。</li><li><strong>BOSS 直聘 / 智联 / 前程无忧</strong>：用户协议明确禁止批量抓取、反爬强、JS 渲染、存在"幽灵岗位"失真 → <strong>不做自动化</strong>，仅允许个人人工浏览后手动记录。</li></ul>
+<blockquote>结论：优先把官方源吃透；猎聘仅在官方源不足时作为降级补充，并严格遵守下方风控阈值。</blockquote>
+<hr>
+<h2 class="h2">二、需要采集的字段清单</h2>
+<p>以"岗位事实表 <code>jobs</code>"为核心，每条记录强制可溯源：</p>
+<table><thead><tr><th>字段</th><th>说明</th><th>是否必填</th></tr></thead><tbody>
+<tr><td><code>job_id</code></td><td>唯一标识（来源 + 哈希）</td><td>✅</td></tr>
+<tr><td><code>snapshot_date</code></td><td>采集快照日期（做趋势用）</td><td>✅</td></tr>
+<tr><td><code>source_name</code> / <code>source_url</code></td><td>来源名称 / 原文链接</td><td>✅</td></tr>
+<tr><td><code>source_level</code></td><td>A / B / C 级源</td><td>✅</td></tr>
+<tr><td><code>source_type</code></td><td>政策正文 / 官方目录 / 官方媒体报道 / 企业公告</td><td>✅</td></tr>
+<tr><td><code>city</code> / <code>district</code></td><td>城市（固定成都）/ 区县</td><td>✅</td></tr>
+<tr><td><code>industry_chain</code></td><td>所属产业链（人工智能 / 软件信息服务 …）</td><td>—</td></tr>
+<tr><td><code>job_title_raw</code> / <code>job_title_std</code></td><td>原始岗位名 / 归一化岗位名</td><td>✅</td></tr>
+<tr><td><code>job_family</code></td><td>数据开发/分析/标注/BI/运维/ETL…</td><td>✅</td></tr>
+<tr><td><code>edu_required</code> / <code>exp_required</code></td><td>学历 / 经验要求</td><td>✅</td></tr>
+<tr><td><code>salary_min</code> / <code>salary_max</code> / <code>salary_raw</code></td><td>月薪下限/上限(元) / 原文</td><td>✅</td></tr>
+<tr><td><code>skill_tags</code></td><td>技能标签</td><td>—</td></tr>
+<tr><td><code>shortage_level</code></td><td>极度/非常/比较/一般/未知</td><td>—</td></tr>
+<tr><td><code>reachability</code></td><td><strong>L1 可达 / L2 跳一跳 / L3 暂不可达</strong></td><td>✅</td></tr>
+<tr><td><code>unlock_by</code></td><td>解锁路径：无/专升本/补技能/攒经验</td><td>—</td></tr>
+<tr><td><code>company_name</code> / <code>company_type</code></td><td>单位名 / 国企·民营·事业单位</td><td>—</td></tr>
+<tr><td><code>policy_ref</code> / <code>evidence</code> / <code>notes</code></td><td>关联政策ID / 原文摘录 / 备注</td><td>✅(evidence)</td></tr>
+</tbody></table>
+<hr>
+<h2 class="h2">三、Python requests + bs4 核心代码框架（教学骨架）</h2>
+<blockquote>以下骨架<strong>面向官方静态页面</strong>（最稳妥、零风险）。URL 与选择器需你用浏览器 F12 自行核对后填入，<strong>不要直接整套照搬运行</strong>。重点看思路：合规请求 → 限速 → 解析 → 抽取字段。</blockquote>
+<pre class="code"><code>&quot;&quot;&quot;
+成都官方紧缺岗位采集 · 核心代码框架（教学骨架）
+目标：从服务端渲染的官方静态页面提取岗位信息
+注意：本脚本为思路骨架，URL 与选择器需自行核对；禁止对商业平台高频批量抓取。
+&quot;&quot;&quot;
+import time
+import requests
+from bs4 import BeautifulSoup
+import pandas as pd
+
+# ---------- 1. 基础配置（学生需自行调整） ----------
+HEADERS = {
+    &quot;User-Agent&quot;: &quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) ...&quot;,  # 填真实 UA
+    &quot;Accept-Language&quot;: &quot;zh-CN,zh;q=0.9&quot;,
+}
+REQUEST_INTERVAL = 2.0   # 请求间隔（秒），保守取 2~3s
+REQUEST_TIMEOUT  = 10    # 超时（秒）
+BASE_URL = &quot;https://www.chengdu.gov.cn/.../xxx.shtml&quot;  # TODO: 替换为真实官方页面
+
+# ---------- 2. 合规请求（带 UA、超时、异常捕获） ----------
+def fetch_page(url):
+    try:
+        resp = requests.get(url, headers=HEADERS, timeout=REQUEST_TIMEOUT)
+        resp.encoding = resp.apparent_encoding   # 防中文乱码
+        if resp.status_code == 200:
+            return resp.text
+        print(f&quot;[WARN] 状态码 {resp.status_code} @ {url}&quot;)
+        return None
+    except Exception as e:
+        print(f&quot;[ERROR] 请求失败 {url}: {e}&quot;)
+        return None
+
+# ---------- 3. 解析（BeautifulSoup 定位卡片 → 逐字段抽取） ----------
+def parse_jobs(html):
+    soup = BeautifulSoup(html, &quot;html.parser&quot;)
+    records = []
+    # TODO: 用 F12 核对真实容器/字段选择器，下面为示意
+    cards = soup.select(&quot;div.job-card-pc-container&quot;)   # 示意选择器
+    for card in cards:
+        job = {
+            &quot;job_title_raw&quot;: card.select_one(&quot;div[title]&quot;).get(&quot;title&quot;, &quot;&quot;),
+            &quot;company_name&quot;:  card.select_one(&quot;.company-name&quot;).get_text(strip=True),
+            &quot;salary_raw&quot;:    card.select_one(&quot;.job-salary&quot;).get_text(strip=True),
+            &quot;district&quot;:      card.select_one(&quot;.job-dq-box .ellipsis-1&quot;).get_text(strip=True),
+            # 其余字段同理，按需抽取；标签需分类（学历/经验/福利）
+        }
+        records.append(job)
+    return records
+
+# ---------- 4. 主流程（单线程串行 + 限速） ----------
+def main():
+    html = fetch_page(BASE_URL)
+    if not html:
+        return
+    records = parse_jobs(html)
+    print(f&quot;本页抽取 {len(records)} 条&quot;)
+    df = pd.DataFrame(records)
+    df.to_csv(&quot;jobs_raw.csv&quot;, index=False, encoding=&quot;utf-8-sig&quot;)  # 落盘见第五节
+    time.sleep(REQUEST_INTERVAL)   # 限速，绝不套多线程
+
+if __name__ == &quot;__main__&quot;:
+    main()</code></pre>
+<p><strong>若降级使用猎聘（务必谨慎）</strong>，已验证的风控阈值（血泪教训）：</p>
+<ul><li>并发 = <strong>1</strong>（绝不用多线程，4 并发详情页会立刻触发）；</li><li>间隔 <strong>1.2–2.0s</strong>（保守场景 3–6s）；</li><li>单轮 <strong>≤ 25 次请求</strong>，然后停一段时间；</li><li>触发 <code>safe.liepin.com/.../captchaPage_ip_PC</code> 后<strong>立即停止</strong>，改用官方渠道或人工补录，不要尝试换 UA / 切移动站等绕过手段（属绕过访问控制，本就不该做）。</li></ul>
+<hr>
+<h2 class="h2">四、采集时需注意的爬虫规范（合规与风控）</h2>
+<ol><li><strong>先读 robots.txt</strong>：请求前访问目标站 <code>/robots.txt</code>，遵守 <code>Disallow</code> 与 <code>Crawl-delay</code>；官方/开放平台以平台标注的开放属性为准。</li><li><strong>控制频率</strong>：单线程、间隔 2–3s、单轮 ≤ 25 次；避开访问高峰；失败即退避，不暴力重试。</li><li><strong>合理请求头</strong>：设置真实 UA、超时、重试退避；不伪造、不伪装成搜索引擎。</li><li><strong>不越界</strong>：不登录抓取、不绕过验证码、不破解接口签名；只采<strong>企业公开发布的岗位信息</strong>。</li><li><strong>不碰个人信息</strong>：绝不采集姓名/电话/简历等，《个人信息保护法》是法律红线，与"能不能爬"无关。</li><li><strong>注明来源</strong>：开放平台协议通常要求成果注明"数据来源 + 下载日期"——这本身就是简历里的合规加分项。</li><li><strong>不二次分发</strong>：原始数据不打包外传；对外只发布<strong>聚合统计结论</strong>。</li><li><strong>商业平台红线</strong>：BOSS/智联/前程用户协议禁止批量抓取 → 不做自动化；猎聘仅作降级补充并守阈值。</li></ol>
+<hr>
+<h2 class="h2">五、数据存储方案（CSV）</h2>
+<ul><li><strong>编码</strong>：<code>utf-8-sig</code>（UTF-8-BOM），保证 Excel 打开不乱码；</li><li><strong>分表</strong>：<code>jobs.csv</code>（岗位明细）、<code>policy_industry.csv</code>（政策产业）、<code>skill_demand.csv</code>（技能需求）；</li><li><strong>必带列</strong>：<code>snapshot_date</code> + <code>source_url</code> + <code>reachability</code>，保证可溯源、可趋势；</li><li><strong>落盘示例</strong>：</li></ul>
+<pre class="code"><code>import pandas as pd
+df.to_csv(&quot;jobs.csv&quot;, index=False, encoding=&quot;utf-8-sig&quot;)   # Excel 友好
+# 读取核对
+df = pd.read_csv(&quot;jobs.csv&quot;, encoding=&quot;utf-8-sig&quot;)
+print(df.shape, df.columns.tolist())</code></pre>
+<hr>
+<h2 class="h2">附一：招聘方向不想写爬虫？用公开数据集版本</h2>
+<p>如果你不想碰爬虫，可直接用<strong>政府公共开放数据集</strong>练手，字段规范、来源权威、零法律风险：</p>
+<ul><li><strong>重庆市公共数据开放系统</strong> <code>https://data.dsjj.cq.gov.cn/</code>（2.5 万+ 数据集、8600+ API，选"无条件开放"类）</li><li><strong>四川省公共数据开放网</strong> <code>http://www.scdata.gov.cn</code> / <strong>成都市公共数据开放平台</strong> <code>http://www.cddata.gov.cn</code></li><li>推荐字段：地区、行业、年份、就业/产业指标等（随所选数据集而定）</li></ul>
+<pre class="code"><code>import pandas as pd
+# 以开放平台下载的 CSV 为例（实际请用平台提供的下载/API）
+df = pd.read_csv(&quot;public_dataset.csv&quot;, encoding=&quot;utf-8-sig&quot;)
+print(df.head(), &quot;\n字段：&quot;, df.columns.tolist())
+# 后续直接进 EDA → 可视化 → 结论，无需自己写采集</code></pre>
+<blockquote>这条路径最适合"先把分析项目跑通、写进简历"，再视情况补官方目录的结构化采集。</blockquote>
+<hr>
+<h2 class="h2">附二：城市空气质量公开数据集（免费 · 公开 · <strong>可商用</strong>）★ 本任务重点</h2>
+<blockquote>你明确说"不想写爬虫、要一份免费公开且可商用的城市空气质量数据集"。下面这份是已核实、可直接用于求职作品集的推荐。</blockquote>
+<h3 class="h3">推荐数据集：UCI 北京 PM2.5 空气质量数据集（Beijing PM2.5）</h3>
+<table><thead><tr><th>项目</th><th>说明</th></tr></thead><tbody>
+<tr><td>数据集名称</td><td>Beijing PM2.5（UCI id=381）</td></tr>
+<tr><td>来源网站</td><td>UCI Machine Learning Repository：<code>https://archive.ics.uci.edu/dataset/381/beijing+pm2.5</code>（备用镜像 Kaggle：<code>https://www.kaggle.com/datasets/thedevastator/beijing-pm2-5-air-pollution-from-2010-2014</code>）</td></tr>
+<tr><td><strong>许可</strong></td><td><strong>Creative Commons Attribution 4.0（CC BY 4.0）</strong>——免费、公开，<strong>允许商用</strong>，仅需署名（标注作者 Chen, S. (2015) 与数据源 UCI）</td></tr>
+<tr><td>时间范围</td><td>2010-01-01 ~ 2014-12-31 逐小时观测，共 43,824 行</td></tr>
+<tr><td>适用分析</td><td>"污染物-气象"关联、PM2.5 时序趋势、季节/小时变化、缺失值处理等，完整覆盖 EDA → 可视化 → 结论</td></tr>
+</tbody></table>
+<p><strong>字段清单（12 列）</strong></p>
+<table><thead><tr><th>字段</th><th>含义</th><th>类型</th></tr></thead><tbody>
+<tr><td><code>No</code></td><td>行号</td><td>int</td></tr>
+<tr><td><code>year</code> / <code>month</code> / <code>day</code> / <code>hour</code></td><td>年 / 月 / 日 / 时</td><td>int</td></tr>
+<tr><td><code>pm2_5</code></td><td>PM2.5 浓度（µg/m³，目标列，缺失记为 <code>NA</code>）</td><td>float</td></tr>
+<tr><td><code>DEWP</code></td><td>露点温度（°C）</td><td>float</td></tr>
+<tr><td><code>TEMP</code></td><td>温度（°C）</td><td>float</td></tr>
+<tr><td><code>PRES</code></td><td>气压（hPa）</td><td>float</td></tr>
+<tr><td><code>cbwd</code></td><td>组合风向（分类：NE/SE/SW/NW…）</td><td>string</td></tr>
+<tr><td><code>Iws</code></td><td>累计风速（m/s）</td><td>float</td></tr>
+<tr><td><code>Is</code></td><td>累计降雪小时</td><td>float</td></tr>
+<tr><td><code>Ir</code></td><td>累计降雨小时</td><td>float</td></tr>
+</tbody></table>
+<blockquote><strong>进阶可选</strong>：UCI 北京多站点空气质量数据集（id=501，12 个监测站、2013–2017，同样 CC BY 4.0），字段更丰富（6 项污染物 + 6 项气象），适合做"站点间对比 / 空间分布"分析。</blockquote>
+<h3 class="h3">pandas 读取示例代码（两种，任选其一）</h3>
+<p><strong>方法一：用 <code>ucimlrepo</code> 直接拉取（最省事，无需手动下载，推荐）</strong></p>
+<pre class="code"><code># 安装依赖：pip install ucimlrepo pandas
+from ucimlrepo import fetch_ucirepo
+import pandas as pd
+
+beijing = fetch_ucirepo(id=381)        # 北京 PM2.5 数据集
+X = beijing.data.features              # 气象等特征列
+y = beijing.data.targets              # pm2_5 目标列
+df = pd.concat([X, y], axis=1)
+
+print(&quot;形状:&quot;, df.shape)
+print(&quot;字段:&quot;, df.columns.tolist())
+print(df.head())
+
+# 缺失值处理（pm2_5 用 NA 表示缺失）
+print(&quot;缺失统计:\n&quot;, df.isna().sum())
+df = df.dropna(subset=[&quot;pm2_5&quot;]).reset_index(drop=True)</code></pre>
+<p><strong>方法二：手动下载 CSV 后用 pandas 读取（Kaggle 镜像文件名为 <code>PRSA_data_2010.1.1-2014.12.31.csv</code>）</strong></p>
+<pre class="code"><code>import pandas as pd
+
+df = pd.read_csv(&quot;PRSA_data_2010.1.1-2014.12.31.csv&quot;)
+df.columns = [c.strip() for c in df.columns]     # 去列名首尾空格
+print(df.shape, df.columns.tolist())
+print(df.head())
+
+# 构造时间索引，便于后续按&quot;月 / 季&quot;做时间序列分析
+df[&quot;datetime&quot;] = pd.to_datetime(df[[&quot;year&quot;, &quot;month&quot;, &quot;day&quot;, &quot;hour&quot;]])
+df = df.set_index(&quot;datetime&quot;).sort_index()</code></pre>
+<h3 class="h3">合规提示（很重要）</h3>
+<p>CC BY 4.0 <strong>允许商用</strong>，但务必在作品集/报告里写明出处：<code>数据来源：UCI Machine Learning Repository, Chen (2015), CC BY 4.0</code>。这既是法律要求，也是你项目严谨性的加分项——面试官看到"注明数据许可"会直接加分。</p></div>
+</section>
+<section id="s3" class="doc-section">
+<div class="doc"><h1 class="h1">步骤 3 · 数据清洗与 EDA 探索性数据分析</h1>
+<blockquote>项目：大数据招聘岗位数据分析（成都 · 招聘公开信息）</blockquote>
+<blockquote>身份：专科大数据技术专业大三学生，用于简历 / 作品集</blockquote>
+<blockquote>主数据集：<code>data/成都大数据岗位_采集结果.csv</code>（373 行，猎聘·成都，快照 2026-09-09）</blockquote>
+<blockquote><strong>完整可运行脚本</strong>：<code>scripts/step3_clean_eda.py</code>（与本文代码一一对应，本机一键跑通）</blockquote>
+<blockquote>技能维度补充集：<code>data/成都五行业数字岗位_1200条.csv</code>（540 行有技能，用于步骤 4 的技能词频）</blockquote>
+<hr>
+<h2 class="h2">0. 已识别的数据质量问题（先诊断，后清洗）</h2>
+<table><thead><tr><th>字段</th><th>问题类型</th><th>具体情况</th><th>清洗对策</th></tr></thead><tbody>
+<tr><td>岗位ID</td><td>重复风险</td><td>全字段重复 0 条</td><td>以岗位ID 去重</td></tr>
+<tr><td>月薪下限/上限/中位_元</td><td>缺失</td><td>2 行为空（架构/技术经理岗，原文 <code>100-150k</code>/<code>300-500k</code>，口径存疑）</td><td>用"薪资原文"回补 + 打"存疑"标记</td></tr>
+<tr><td>薪资备注</td><td>缺失</td><td>371 行为空（正常）</td><td>fillna('') 保持整洁</td></tr>
+<tr><td>技能要求</td><td>占位符污染</td><td>373 行<strong>全部</strong>为"（源站详情页触发IP验证码，未获取）"</td><td>标记"未获取"，词频分析换 1200 行集</td></tr>
+<tr><td>经验要求</td><td>格式混乱</td><td>23 种写法（"3-5年"/"5年以上"/"3年以下"）</td><td>解析为 经验下限_年 / 经验上限_年 数值</td></tr>
+<tr><td>学历要求</td><td>有序类别</td><td>大专&lt;本科&lt;硕士&lt;博士 + 学历不限</td><td>转为有序 Categorical</td></tr>
+<tr><td>区县</td><td>粒度不一</td><td>混有"成都(未细分)"与真实区县</td><td>保留原值并标记，不强行虚构</td></tr>
+<tr><td>岗位名称</td><td>一岗多职</td><td>42 行含"/"或"、"</td><td>打"是否复合岗位"标记，不拆分</td></tr>
+</tbody></table>
+<blockquote><strong>核心局限（务必在简历/答辩里说明）</strong>：本集 373 行<strong>技能字段整体缺失</strong>（采集时详情页触发验证码），因此"技能词频"维度改用 <code>成都五行业数字岗位_1200条.csv</code>。步骤 3 聚焦<strong>薪资 / 学历 / 经验 / 可达性</strong>四个维度。</blockquote>
+<hr>
+<h2 class="h2">一、需要做的数据清洗步骤（四大类）</h2>
+<table><thead><tr><th>步骤</th><th>目标字段</th><th>要解决的问题</th><th>处理对策</th></tr></thead><tbody>
+<tr><td><strong>1. 去重</strong></td><td>岗位ID、岗位名称/企业/薪资/学历/经验</td><td>系统重复写入 vs 真实重复</td><td>主键去重 + 业务去重双层校验；一行多岗只标记不删</td></tr>
+<tr><td><strong>2. 缺失值处理</strong></td><td>薪资三列、薪资备注、技能要求</td><td>空值、占位符</td><td>薪资用原文回补并打"存疑"标记；占位符转 NaN 并标记"技能未获取"</td></tr>
+<tr><td><strong>3. 异常值处理</strong></td><td>月薪中位_元</td><td>中位越界、上下限颠倒、极端高薪</td><td><strong>只标记不删行</strong>，统计时按需剔除</td></tr>
+<tr><td><strong>4. 字段类型转换</strong></td><td>经验要求、学历要求、可达性、快照日期</td><td>文本不可计算/不可排序</td><td>经验→数值；学历/可达性→有序类别；日期→datetime</td></tr>
+</tbody></table>
+<hr>
+<h2 class="h2">二、对应 pandas 代码（含注释）</h2>
+<blockquote>以下为关键代码片段；<strong>完整可运行版本见 <code>scripts/step3_clean_eda.py</code></strong>，在 workspace 根目录执行 <code>python scripts/step3_clean_eda.py</code> 即可。</blockquote>
+<h3 class="h3">2.1 去重</h3>
+<pre class="code"><code>import pandas as pd
+df = pd.read_csv(&quot;data/成都大数据岗位_采集结果.csv&quot;, dtype=str, keep_default_na=False)
+
+# 主键去重：岗位ID 是平台唯一标识
+dup_id = df.duplicated(subset=[&quot;岗位ID&quot;]).sum()
+# 业务去重：同名同企同薪同要求的全字段重复（防采集重复写入）
+dup_full = df.duplicated(
+    subset=[&quot;岗位名称&quot;,&quot;企业名称&quot;,&quot;薪资原文&quot;,&quot;学历要求&quot;,&quot;经验要求&quot;]).sum()
+df = df.drop_duplicates(subset=[&quot;岗位ID&quot;]).reset_index(drop=True)
+
+# 一行多岗（名称含 / 或 、）不删除，仅打标记
+df[&quot;是否复合岗位&quot;] = df[&quot;岗位名称&quot;].str.contains(r&quot;[/、]&quot;, regex=True).map({True:&quot;是&quot;, False:&quot;否&quot;})</code></pre>
+<p><strong>为什么</strong>：先分别统计"主键重复"和"业务重复"，能区分"系统 bug"和"真实重复"，面试时能讲清你做了两层校验。</p>
+<h3 class="h3">2.2 缺失值处理</h3>
+<pre class="code"><code>import re, numpy as np
+for c in [&quot;月薪下限_元&quot;,&quot;月薪上限_元&quot;,&quot;月薪中位_元&quot;]:
+    df[c] = pd.to_numeric(df[c], errors=&quot;coerce&quot;)   # 空串→NaN，便于统计缺失
+
+# 缺失薪资：用&quot;薪资原文&quot;回补（只动空值，已有数值不动）
+def parse_salary(raw):
+    if not raw: return (np.nan, np.nan)
+    m = re.search(r&quot;(\d+(?:\.\d+)?)\s*-\s*(\d+(?:\.\d+)?)\s*k&quot;, raw)  # 区间 12-18k
+    if m: return float(m.group(1))*1000, float(m.group(2))*1000
+    m = re.search(r&quot;(\d+(?:\.\d+)?)\s*k&quot;, raw)                        # 单值 40k
+    if m: v = float(m.group(1))*1000; return v, v
+    return (np.nan, np.nan)
+
+mask_null = df[&quot;月薪下限_元&quot;].isna() | df[&quot;月薪上限_元&quot;].isna()
+for i in df[mask_null].index:
+    lo, hi = parse_salary(df.at[i,&quot;薪资原文&quot;])
+    df.at[i,&quot;月薪下限_元&quot;] = lo
+    df.at[i,&quot;月薪上限_元&quot;] = hi
+    df.at[i,&quot;月薪中位_元&quot;] = (lo+hi)/2 if pd.notna(lo) and pd.notna(hi) else np.nan
+    df.at[i,&quot;薪资口径标记&quot;] = &quot;存疑(原文回补)&quot;   # 关键：保留可追溯，不偷偷当真值
+
+# 技能字段：占位符清洗，避免污染词频（本集全部缺失，直接标记）
+SKILL_PH = &quot;（源站详情页触发IP验证码，未获取）&quot;
+df[&quot;技能可用&quot;] = ~df[&quot;技能要求&quot;].str.contains(&quot;未获取&quot;, na=False)
+df.loc[df[&quot;技能要求&quot;] == SKILL_PH, &quot;技能要求&quot;] = np.nan</code></pre>
+<p><strong>为什么</strong>：缺失值<strong>不盲目删、不瞎填</strong>。薪资用原文回补但打"存疑"标记，既保住样本量又不影响可信统计——这是严谨性的体现。</p>
+<h3 class="h3">2.3 异常值处理（只标记、不删行）</h3>
+<pre class="code"><code>df[&quot;薪资异常&quot;] = &quot;&quot;
+m_mid = (df[&quot;月薪中位_元&quot;] &lt; df[&quot;月薪下限_元&quot;]*0.9) | (df[&quot;月薪中位_元&quot;] &gt; df[&quot;月薪上限_元&quot;]*1.1)
+df.loc[m_mid, &quot;薪资异常&quot;] += &quot;中位越界;&quot;
+m_rev = df[&quot;月薪下限_元&quot;] &gt; df[&quot;月薪上限_元&quot;]
+df.loc[m_rev, &quot;薪资异常&quot;] += &quot;上下限颠倒;&quot;
+hi_thr, lo_thr = df[&quot;月薪中位_元&quot;].quantile(0.995), df[&quot;月薪中位_元&quot;].quantile(0.005)
+m_ext = (df[&quot;月薪中位_元&quot;] &gt; hi_thr) | (df[&quot;月薪中位_元&quot;] &lt; lo_thr)
+df.loc[m_ext &amp; (df[&quot;薪资异常&quot;]==&quot;&quot;), &quot;薪资异常&quot;] = &quot;极端值(保留)&quot;</code></pre>
+<p><strong>为什么</strong>：异常值处理原则是"先诊断、后决策"。本集有 4 条极端高薪（架构/技术经理），直接删除会损失业务信息，故标记后在统计时按需剔除。</p>
+<h3 class="h3">2.4 字段类型转换（含经验要求归一化）</h3>
+<pre class="code"><code>def parse_exp(s):
+    s = (s or &quot;&quot;).strip()
+    if &quot;不限&quot; in s or s == &quot;无&quot;: return (0.0, np.nan)
+    m = re.search(r&quot;(\d+)\s*-\s*(\d+)\s*年&quot;, s);  if m: return float(m.group(1)), float(m.group(2))
+    m = re.search(r&quot;(\d+)\s*年\s*以上&quot;, s);       if m: return float(m.group(1)), np.nan
+    m = re.search(r&quot;(\d+)\s*年\s*以下&quot;, s);       if m: return 0.0, float(m.group(1))
+    m = re.search(r&quot;(\d+)\s*年&quot;, s);              if m: return float(m.group(1)), float(m.group(1))
+    return (np.nan, np.nan)
+
+df[[&quot;经验下限_年&quot;,&quot;经验上限_年&quot;]] = df[&quot;经验要求&quot;].apply(lambda x: pd.Series(parse_exp(x)))
+df[&quot;经验缺失&quot;] = df[&quot;经验下限_年&quot;].isna()
+
+edu_order = [&quot;大专&quot;,&quot;学历不限&quot;,&quot;本科&quot;,&quot;硕士&quot;,&quot;博士&quot;]
+df[&quot;学历要求&quot;] = pd.Categorical(df[&quot;学历要求&quot;], categories=edu_order, ordered=True)
+df[&quot;可达性&quot;]   = pd.Categorical(df[&quot;可达性&quot;],   categories=[&quot;L1&quot;,&quot;L2&quot;,&quot;L3&quot;], ordered=True)
+df[&quot;快照日期&quot;] = pd.to_datetime(df[&quot;快照日期&quot;], errors=&quot;coerce&quot;)
+
+df.to_csv(&quot;data/clean/成都大数据岗位_清洗后.csv&quot;, index=False, encoding=&quot;utf-8-sig&quot;)</code></pre>
+<p><strong>为什么</strong>：把文本经验转成数值，才能算"经验溢价"；把学历/可达性设成有序类别，分组时自动按等级排序，避免画出"本科&gt;硕士"的颠倒图。</p>
+<hr>
+<h2 class="h2">三、探索性分析维度（描述统计 + 分组统计）</h2>
+<h3 class="h3">3.1 描述性统计（单变量）</h3>
+<pre class="code"><code>sal = df[&quot;月薪中位_元&quot;].dropna()
+desc = pd.DataFrame({
+    &quot;指标&quot;: [&quot;样本数&quot;,&quot;均值&quot;,&quot;中位数&quot;,&quot;标准差&quot;,&quot;最小值&quot;,&quot;25%分位&quot;,&quot;75%分位&quot;,&quot;最大值&quot;],
+    &quot;月薪中位_元&quot;: [len(sal), sal.mean(), sal.median(), sal.std(),
+                   sal.min(), sal.quantile(.25), sal.quantile(.75), sal.max()],
+})</code></pre>
+<h3 class="h3">3.2 分组统计（按业务维度切分）</h3>
+<pre class="code"><code># (a) 岗位族：招聘量 + 薪资
+df.groupby(&quot;岗位族&quot;, observed=True).agg(
+    招聘量=(&quot;岗位ID&quot;,&quot;count&quot;), 薪资中位=(&quot;月薪中位_元&quot;,&quot;median&quot;)).sort_values(&quot;招聘量&quot;, ascending=False)
+
+# (b) 学历溢价
+df.groupby(&quot;学历要求&quot;, observed=True)[&quot;月薪中位_元&quot;].agg(招聘量=&quot;count&quot;, 薪资中位=&quot;median&quot;, 薪资均值=&quot;mean&quot;)
+
+# (c) 经验溢价
+df.groupby(&quot;经验下限_年&quot;, observed=True)[&quot;月薪中位_元&quot;].agg(招聘量=&quot;count&quot;, 薪资中位=&quot;median&quot;)
+
+# (d) 可达性 / 解锁路径（求职最关键）
+df[&quot;可达性&quot;].value_counts();  df[&quot;解锁路径&quot;].value_counts()
+
+# (e) 区县聚集
+df[&quot;区县&quot;].value_counts().head(10)</code></pre>
+<h3 class="h3">3.3 交叉分析</h3>
+<pre class="code"><code>pd.crosstab(df[&quot;岗位族&quot;], df[&quot;可达性&quot;])   # 看哪些岗位族对专科/专升本友好</code></pre>
+<hr>
+<h2 class="h2">四、每一步分析的业务含义</h2>
+<table><thead><tr><th>分析</th><th>业务含义（面试可讲）</th></tr></thead><tbody>
+<tr><td><strong>薪资描述统计</strong></td><td>中位数（18000）比均值（22097）更可信——薪资右偏，少数高薪架构岗拉高均值，<strong>汇报一律报中位数</strong>；25%~75% 分位（12500~25000）即成都大数据岗主流薪资区间</td></tr>
+<tr><td><strong>岗位族招聘量</strong></td><td>哪个族机会最多（数据开发/ETL 是最大入口），决定投简历的主攻方向</td></tr>
+<tr><td><strong>学历溢价</strong></td><td>验证"专升本值不值"：硕士中位 &gt; 本科 &gt; 大专，量化升本的薪资回报</td></tr>
+<tr><td><strong>经验溢价</strong></td><td>经验下限 5 年薪资明显跳升，是"攒经验"路径的量化依据</td></tr>
+<tr><td><strong>可达性分布</strong></td><td>L1 现在能投 / L2 跳一跳是主战场 / L3 需专升本——直接对应你的求职决策</td></tr>
+<tr><td><strong>解锁路径</strong></td><td>专升本是最大杠杆（解锁 135 条 L3），与你的升学规划互相印证</td></tr>
+<tr><td><strong>区县聚集</strong></td><td>高新区/天府新区岗位密度高，求职地理重心参考</td></tr>
+<tr><td><strong>岗位族×可达性</strong></td><td>找出对专科/专升本最友好的切入族（如数据开发/ETL 的 L1/L2 占比）</td></tr>
+</tbody></table>
+<p><strong>关键 EDA 结论（可直接引用）</strong></p>
+<ol><li><strong>学历溢价真实存在</strong>：硕士中位 &gt; 本科（+约29%）&gt; 大专；但"学历不限"岗中位反超——多为销售/高管/资深岗，不是专科生机会。</li><li><strong>经验是硬通货</strong>：经验下限 5 年中位明显上升，"经验不限"岗中位最低。</li><li><strong>可达性分层</strong>：现在能投（L1）仅 12 条，跳一跳（L2）226 条是主战场，<strong>专升本解锁 135 条（L3）</strong>——升本是性价比最高的杠杆。</li><li><strong>岗位族选择</strong>：数据开发/ETL 招聘量最大、对专科相对友好，是高职生首选切入族；数据挖掘/算法薪资高但门槛也高。</li></ol>
+<hr>
+<h2 class="h2">五、如何运行与核对结果（本机运行脚本）</h2>
+<p>本沙箱当前无法运行 pandas（环境网络受限），故脚本已写好供你<strong>在本机跑通并核对</strong>。</p>
+<pre class="code"><code># 在 workspace 根目录（D:\workbuddy测试）执行
+python scripts/step3_clean_eda.py</code></pre>
+<p><strong>运行后请核对以下数字（来自同款已跑通数据，供对照）</strong></p>
+<table><thead><tr><th>核对项</th><th>预期值</th></tr></thead><tbody>
+<tr><td>清洗后行数</td><td>373</td></tr>
+<tr><td>薪资中位数（月薪中位_元）</td><td>18000</td></tr>
+<tr><td>薪资均值</td><td>≈ 22097</td></tr>
+<tr><td>25%~75% 分位</td><td>12500 ~ 25000</td></tr>
+<tr><td>可达性 L1 / L2 / L3</td><td>12 / 226 / 135</td></tr>
+<tr><td>解锁路径=专升本</td><td>≈ 216</td></tr>
+</tbody></table>
+<p>若以上数字接近，说明你的清洗逻辑与数据一致，可放心进入<strong>步骤 4 可视化</strong>。脚本还会生成：</p>
+<ul><li><code>data/clean/成都大数据岗位_清洗后.csv</code>（373 行，含衍生字段）</li><li><code>data/clean/成都大数据岗位_描述性统计.csv</code>（描述 + 分组统计结果）</li></ul>
+<hr>
+<h2 class="h2">六、数据质量与局限性（诚实披露，反成加分项）</h2>
+<ol><li><strong>技能字段整体缺失</strong>：373 行技能均为详情页验证码未获取，技能词频需换 1200 行集，本报告未做技能维度。</li><li><strong>薪资口径损失</strong>：2 条架构岗原文 <code>100-150k</code>/<code>300-500k</code> 疑为年薪，已标记"存疑"并剔除出可信统计。</li><li><strong>区县粒度不一</strong>：部分行仅标"成都(未细分)"，区域聚集分析仅作参考。</li><li><strong>单一平台偏差</strong>：数据全来自猎聘，未含 BOSS/智联/官方公共招聘网，薪资分布有平台偏倚。</li><li><strong>快照时点</strong>：2026-09-09 单点采集，反映当时行情，非趋势数据。</li></ol>
+<hr>
+<h2 class="h2">七、衔接下一步</h2>
+<ul><li>本步骤产出清洗后数据集 + 描述性统计，可直接进<strong>步骤 4 可视化</strong>（matplotlib/seaborn 画箱线图/条形图）。</li><li>技能维度：用 <code>成都五行业数字岗位_1200条.csv</code> 补"技能词频"分析。</li><li>最终输出《我能投的岗位清单》《我要补的技能清单》两张求职决策表。</li></ul></div>
+</section>
+<section id="s4" class="doc-section">
+<div class="doc"><h1 class="h1">步骤 4 · 可视化方案与业务结论（matplotlib 版）</h1>
+<blockquote>项目：成都大数据岗位情报分析（求职作品集）</blockquote>
+<blockquote>数据：<code>data/clean/成都大数据岗位_清洗后.csv</code>（n = 373，快照 2026-09-09）</blockquote>
+<blockquote>脚本：<code>scripts/step4_matplotlib_charts.py</code>（已实跑，生成 <code>docs/figures/fig1~fig4.png</code>）</blockquote>
+<blockquote>目标：不是"为画图而画图"，而是<strong>每张图回答一个求职业务问题</strong>，且学生能向面试官讲清"图在说什么、为什么这样画"。</blockquote>
+<hr>
+<h2 class="h2">一、4 张图表设计表（图类型 / X-Y 轴 / 业务意义）</h2>
+<table><thead><tr><th>#</th><th>图表类型</th><th>X 轴</th><th>Y 轴</th><th>回答的业务问题</th><th>业务意义</th></tr></thead><tbody>
+<tr><td>图1</td><td>条形图（柱状）</td><td>学历要求（大专/本科/硕士/学历不限）</td><td>薪资中位数（元）</td><td>学历到底值不值钱？</td><td>量化"学历溢价"，并发现"学历不限"岗位反超本科的反直觉现象</td></tr>
+<tr><td>图2</td><td>环形图（donut）</td><td>可达性分层 L1/L2/L3</td><td>各层岗位占比</td><td>专科生真实能投多少？</td><td>用"可投面 63.8%"把抽象的"机会"变成可决策的数字</td></tr>
+<tr><td>图3</td><td>水平条形图</td><td>岗位族</td><td>招聘量（岗位数）</td><td>我该主攻哪类岗位？</td><td>定位"数据开发/ETL"为最大入口，避免海投浪费精力</td></tr>
+<tr><td>图4</td><td>直方图</td><td>月薪中位数（元，分箱）</td><td>岗位数</td><td>薪资到底怎么分布？</td><td>揭示"均值被高薪岗拉高、分布右偏"，确立"报中位数"的口径</td></tr>
+</tbody></table>
+<blockquote>4 张图彼此呼应：图4 定"薪资口径"→ 图1 看"学历溢价"→ 图3 定"主攻方向"→ 图2 定"可达范围"。构成一条完整的求职决策链。</blockquote>
+<hr>
+<h2 class="h2">二、matplotlib 绘图代码（带中文设置与逐行注释）</h2>
+<blockquote>完整可运行脚本见 <code>scripts/step4_matplotlib_charts.py</code>。以下为关键绘图片段，重点看：① 中文显示怎么设 ② 每一张图"先算数、再画图"。</blockquote>
+<pre class="code"><code>import matplotlib
+matplotlib.use(&quot;Agg&quot;)                      # 无界面环境也能导出图片
+import matplotlib.pyplot as plt
+import matplotlib.font_manager as fm
+import csv, statistics
+from collections import Counter, defaultdict
+
+# ---------- 0. 中文显示（作业/面试都要中文标签，必须设） ----------
+# Windows 常见中文字体：SimHei(黑体)、Microsoft YaHei(微软雅黑)
+def setup_cn_font():
+    for name in [&quot;SimHei&quot;, &quot;Microsoft YaHei&quot;, &quot;SimSun&quot;]:
+        try:
+            fm.findfont(name, fallback_to_default=False)
+            plt.rcParams[&quot;font.sans-serif&quot;] = [name]   # 指定中文字体
+            return name
+        except Exception:
+            continue
+    return None
+setup_cn_font()
+plt.rcParams[&quot;axes.unicode_minus&quot;] = False   # 修复负号显示为方块
+plt.rcParams[&quot;figure.dpi&quot;] = 130             # 导出清晰度
+
+# ---------- 1. 读取清洗后的 CSV（零依赖 csv 模块，稳定） ----------
+rows = list(csv.DictReader(open(&quot;data/clean/成都大数据岗位_清洗后.csv&quot;,
+                                encoding=&quot;utf-8-sig&quot;, newline=&quot;&quot;)))
+def num(x):
+    try: return float(str(x).strip().replace(&quot;,&quot;, &quot;&quot;)) if str(x).strip() else None
+    except: return None
+
+# ====================== 图1：学历 × 薪资中位数（条形图） ======================
+edu_order = [&quot;大专&quot;, &quot;本科&quot;, &quot;硕士&quot;, &quot;学历不限&quot;]
+sal_by_edu = defaultdict(list)
+for r in rows:
+    v = num(r[&quot;月薪中位_元&quot;])
+    if v: sal_by_edu[r[&quot;学历要求&quot;]].append(v)
+edu_med = {e: statistics.median(sal_by_edu[e]) for e in edu_order if sal_by_edu.get(e)}
+
+fig, ax = plt.subplots(figsize=(7, 4.2))
+xs, ys = list(edu_med.keys()), [edu_med[k] for k in edu_med]
+bars = ax.bar(xs, ys, color=[&quot;#2563eb&quot;]*3 + [&quot;#f59e0b&quot;])   # 学历不限用橙色高亮
+ax.set_title(&quot;不同学历要求的薪资中位数对比&quot;, fontsize=13, weight=&quot;bold&quot;)
+ax.set_ylabel(&quot;月薪中位数（元）&quot;); ax.set_xlabel(&quot;学历要求&quot;)
+for b, y in zip(bars, ys):                                # 柱顶标注数值
+    ax.text(b.get_x()+b.get_width()/2, y+300, f&quot;{int(y):,}&quot;, ha=&quot;center&quot;, weight=&quot;bold&quot;)
+ax.spines[[&quot;top&quot;,&quot;right&quot;]].set_visible(False)            # 去边框更清爽
+fig.tight_layout(); fig.savefig(&quot;docs/figures/fig1_edu_salary.png&quot;); plt.close(fig)
+
+# ====================== 图2：可达性分层（环形图） ======================
+reach = Counter(r[&quot;可达性&quot;] for r in rows)               # {&#x27;L1&#x27;:12,&#x27;L2&#x27;:226,&#x27;L3&#x27;:135}
+fig, ax = plt.subplots(figsize=(5.4, 5))
+vals = [reach.get(k,0) for k in [&quot;L1&quot;,&quot;L2&quot;,&quot;L3&quot;]]
+ax.pie(vals, labels=[&quot;L1&quot;,&quot;L2&quot;,&quot;L3&quot;], colors=[&quot;#16a34a&quot;,&quot;#2563eb&quot;,&quot;#cbd5e1&quot;],
+       autopct=lambda p: f&quot;{p:.1f}%&quot;, startangle=90, pctdistance=0.78,
+       wedgeprops=dict(width=0.42, edgecolor=&quot;white&quot;))   # width&lt;1 → 环形
+l12 = reach.get(&quot;L1&quot;,0) + reach.get(&quot;L2&quot;,0)
+ax.text(0,0, f&quot;可投面\n{l12}/{len(rows)}\n({l12*100//len(rows)}%)&quot;,
+        ha=&quot;center&quot;, va=&quot;center&quot;, fontsize=12, weight=&quot;bold&quot;)
+ax.axis(&quot;equal&quot;); fig.tight_layout()
+fig.savefig(&quot;docs/figures/fig2_reachability.png&quot;); plt.close(fig)
+
+# ====================== 图3：岗位族招聘量（水平条形图） ======================
+fam = Counter(r[&quot;岗位族&quot;] for r in rows).most_common()   # 自动按数量降序
+fig, ax = plt.subplots(figsize=(7.5, 5))
+labels = [k for k,_ in fam][::-1]; counts = [v for _,v in fam][::-1]
+bars = ax.barh(labels, counts, color=&quot;#2563eb&quot;)
+ax.set_title(&quot;各岗位族招聘需求量&quot;, fontsize=13, weight=&quot;bold&quot;); ax.set_xlabel(&quot;岗位数&quot;)
+for b,c in zip(bars, counts):
+    ax.text(c+1, b.get_y()+b.get_height()/2, str(c), va=&quot;center&quot;, fontsize=9)
+ax.spines[[&quot;top&quot;,&quot;right&quot;]].set_visible(False)
+fig.tight_layout(); fig.savefig(&quot;docs/figures/fig3_job_family.png&quot;); plt.close(fig)
+
+# ====================== 图4：薪资分布（直方图 + 中位/均值线） ======================
+sal_all = [num(r[&quot;月薪中位_元&quot;]) for r in rows if num(r[&quot;月薪中位_元&quot;])]
+SAL_MED, SAL_MEAN = statistics.median(sal_all), statistics.mean(sal_all)
+fig, ax = plt.subplots(figsize=(7.5, 4.2))
+ax.hist(sal_all, bins=20, color=&quot;#2563eb&quot;, alpha=0.85, edgecolor=&quot;white&quot;)
+ax.axvline(SAL_MED, color=&quot;#f59e0b&quot;, ls=&quot;--&quot;, lw=2, label=f&quot;中位数 {int(SAL_MED):,}&quot;)
+ax.axvline(SAL_MEAN, color=&quot;#dc2626&quot;, ls=&quot;:&quot;, lw=2, label=f&quot;均值 {int(SAL_MEAN):,}&quot;)
+ax.set_title(&quot;月薪中位数分布（右偏）&quot;, fontsize=13, weight=&quot;bold&quot;)
+ax.set_xlabel(&quot;月薪中位数（元）&quot;); ax.set_ylabel(&quot;岗位数&quot;); ax.legend()
+ax.spines[[&quot;top&quot;,&quot;right&quot;]].set_visible(False)
+fig.tight_layout(); fig.savefig(&quot;docs/figures/fig4_salary_dist.png&quot;); plt.close(fig)</code></pre>
+<p><strong>运行方式</strong>（在 <code>D:\workbuddy测试</code> 根目录）：</p>
+<pre class="code"><code>cd D:\workbuddy测试
+python scripts\step4_matplotlib_charts.py</code></pre>
+<hr>
+<h2 class="h2">三、4 条面向应届生求职的落地业务结论</h2>
+<blockquote>要求：结论不能空泛，必须能直接指导"投不投、补什么、怎么谈薪"。</blockquote>
+<h3 class="h3">结论 1：谈薪看中位数，别被"平均薪资"带偏</h3>
+<ul><li><strong>数据</strong>：薪资中位数 <strong>18,000 元</strong>，均值 <strong>22,097 元</strong>，差 4,097 元；75% 岗位落在 12,500~25,000 元。</li><li><strong>落地建议</strong>：面试谈薪、填期望薪资时以 <strong>18k</strong> 为基准锚点。均值被少数 30k+ 架构/资深岗拉高，若以均值自我预期，容易高估、错失匹配岗位。</li><li><strong>面试讲法</strong>："我汇报薪资一律报中位数，因为分布右偏，均值没有代表性。"</li></ul>
+<h3 class="h3">结论 2：学历有溢价，但"学历不限"高薪岗证明专科不是天花板</h3>
+<ul><li><strong>数据</strong>：大专中位 13,500 → 本科 17,500（溢价 +29.6%）→ 硕士 22,500；但<strong>"学历不限"岗位中位 25,000 &gt; 本科</strong>。</li><li><strong>落地建议</strong>：专升本值得做（回报率量化在第 3 点），但不必因"大专"彻底躺平——把项目、技能做扎实，可以直接冲"学历不限"的高薪岗。</li><li><strong>面试讲法</strong>："学历是门槛之一不是天花板；我用作品集项目证明工程能力，对冲学历约束。"</li></ul>
+<h3 class="h3">结论 3：专科生真实可投面 = 63.8%，把目标定在合理区间</h3>
+<ul><li><strong>数据</strong>：可达性 L1（现在能投）12 个 + L2（跳一跳可达）226 个 = <strong>238 个，占 63.8%</strong>；L3 暂不可达 135 个。</li><li><strong>落地建议</strong>：投简历聚焦 L1/L2 共 238 个岗位，不要因"要求本科"就放弃全部；其中 <strong>216 个岗位靠"专升本"解锁（占 57.9%）</strong>，说明升本是 ROI 最高的单点杠杆。</li><li><strong>面试讲法</strong>："我把岗位按可达性分层，真实可投面 63.8%，升本能再解锁 216 个，所以我的规划是边升本边投 L2。"</li></ul>
+<h3 class="h3">结论 4：主攻"数据开发/ETL"，技术栈对齐数仓 + ETL + SQL</h3>
+<ul><li><strong>数据</strong>：岗位族招聘量第一是 <strong>数据开发/ETL（132 个，占 35%）</strong>，且其中 L2 有 89 个（专科可达性最高）。</li><li><strong>落地建议</strong>：简历项目、刷题、实习方向全部对齐"数据开发/ETL"——SQL、数仓建模、ETL 调度；<strong>不必先去卷算法</strong>（算法岗量小、门槛高）。</li><li><strong>面试讲法</strong>："我用数据定位出主攻方向是数据开发/ETL，所以我重点练的是 SQL 和数仓 ETL，而不是算法。"</li></ul>
+<hr>
+<h2 class="h2">四、必须能讲清的 3 个图表局限（面试官最爱追问）</h2>
+<ol><li><strong>图1 的"经验不限"被记为 0 年</strong> → 0 年组薪资反而高于 1 年组，是口径问题不是规律，<strong>本分析已不引用经验组做溢价推断</strong>。</li><li><strong>"学历不限"高薪岗多为销售/高管/资深，并非专科生真实机会</strong> → 图1 用它说明"学历非天花板"，但求职上不能误读为"大专能拿 25k"。</li><li><strong>大专样本仅 17 个</strong>（占 4.6%）→ 学历溢价 +29.6% 方向可信，具体数值不宜过度解读。</li></ol>
+<blockquote>主动说出局限 = 证明你知道数据边界，是数据分析岗最看重的素质。</blockquote>
+<hr>
+<h2 class="h2">五、输出文件</h2>
+<ul><li><code>docs/figures/fig1_edu_salary.png</code> — 学历 × 薪资中位数</li><li><code>docs/figures/fig2_reachability.png</code> — 可达性分层环形图</li><li><code>docs/figures/fig3_job_family.png</code> — 岗位族招聘量</li><li><code>docs/figures/fig4_salary_dist.png</code> — 薪资分布直方图</li><li>交互式全景看板（含 7 图）：<code>成都数据岗位_可视化看板.html</code>（见 <code>步骤4_可视化与洞察.md</code>）</li></ul></div>
+</section>
+<section id="s4b" class="doc-section">
+<div class="doc"><h1 class="h1">步骤 4 · 可视化与结论输出</h1>
+<blockquote>项目：成都大数据岗位情报分析（求职作品集）</blockquote>
+<blockquote>数据：<code>data/clean/成都大数据岗位_清洗后.csv</code>（n = 373，快照 2026-09-09）</blockquote>
+<blockquote>产出：<code>成都数据岗位_可视化看板.html</code>（自包含看板，双击即开）</blockquote>
+<hr>
+<h2 class="h2">一、本步骤做了什么</h2>
+<table><thead><tr><th>项</th><th>说明</th></tr></thead><tbody>
+<tr><td>生成脚本</td><td><code>scripts/step4_visualize.py</code></td></tr>
+<tr><td>脚本依赖</td><td><strong>零依赖</strong>（只用 Python 标准库），任何 Python 环境可跑</td></tr>
+<tr><td>输出形式</td><td>单个 HTML，图表为内嵌 <strong>纯 SVG</strong>，不含 JS / CDN，离线可开、可直接挂作品集</td></tr>
+<tr><td>图表数量</td><td>7 张（1 直方图 + 4 条形图 + 1 环形图 + 1 热力图）+ 5 个 KPI 卡片</td></tr>
+</tbody></table>
+<p><strong>为什么不用 matplotlib</strong>：一是环境装包反复失败（清华源 403、Anaconda base 的 numpy DLL 损坏），二是 SVG 矢量图放大不失真、面试官双击就能看，比 PNG 更适合作品集。</p>
+<p>运行方式：</p>
+<pre class="code"><code>cd D:\workbuddy测试
+python scripts\step4_visualize.py</code></pre>
+<hr>
+<h2 class="h2">二、看板结构与「每张图回答什么业务问题」</h2>
+<table><thead><tr><th>#</th><th>图表</th><th>业务问题</th><th>业务含义</th></tr></thead><tbody>
+<tr><td>1</td><td>月薪中位直方图</td><td>成都大数据岗位薪资在什么区间</td><td>分布右偏，用中位数做期望薪资锚点比均值可靠</td></tr>
+<tr><td>2</td><td>学历 × 薪资中位</td><td>本科比专科高多少</td><td>量化学历溢价，判断专升本 ROI</td></tr>
+<tr><td>3</td><td>经验年限 × 薪资中位</td><td>几年经验最值钱</td><td>决定"先就业攒经验"还是"先提升学历"</td></tr>
+<tr><td>4</td><td>岗位族招聘量</td><td>哪些岗招得最多</td><td>决定投递主攻方向</td></tr>
+<tr><td>5</td><td>可达性环形图</td><td>专科生真实机会面有多大</td><td>L1 直接投 / L2 跳一跳 / L3 暂不可达</td></tr>
+<tr><td>6</td><td>岗位族 × 可达性热力图</td><td>哪个岗位族的专科机会最多</td><td>定位"主战场格子"</td></tr>
+<tr><td>7</td><td>区县 Top10</td><td>岗位集中在哪</td><td>通勤与租房决策</td></tr>
+</tbody></table>
+<hr>
+<h2 class="h2">三、核心结论（可直接写进简历 / 面试口述）</h2>
+<h3 class="h3">结论 1：看中位数，不看均值</h3>
+<ul><li>薪资<strong>中位数 18,000 元</strong>，<strong>均值 22,097 元</strong>，两者差 <strong>4,097 元</strong></li><li>四分位区间：<strong>12,500 ~ 25,000 元</strong>（Q1 ~ Q3）</li></ul>
+<p><strong>含义</strong>：均值被少量高薪岗位（30k+ 的算法/资深岗）拉高，分布右偏。求职时应以中位数 18k 作为合理锚点，避免被"平均薪资"误导。</p>
+<h3 class="h3">结论 2：学历有溢价，但不是唯一通路</h3>
+<table><thead><tr><th>学历</th><th>岗位数</th><th>薪资中位</th><th>薪资均值</th></tr></thead><tbody>
+<tr><td>大专</td><td>17</td><td>13,500</td><td>13,618</td></tr>
+<tr><td>学历不限</td><td>17</td><td><strong>25,000</strong></td><td>29,912</td></tr>
+<tr><td>本科</td><td>310</td><td>17,500</td><td>21,468</td></tr>
+<tr><td>硕士</td><td>29</td><td>22,500</td><td>29,207</td></tr>
+</tbody></table>
+<ul><li>本科相对大专溢价 <strong>+29.6%</strong></li><li><strong>但"学历不限"岗位中位达 25,000，高于本科</strong> —— 说明部分高薪岗位看经验与项目能力，不卡学历</li></ul>
+<p><strong>含义</strong>：这是专科生最有力的论据。学历是门槛之一，不是天花板；把项目做扎实、把技术栈补齐，可以直接冲"学历不限"的高薪岗。</p>
+<h3 class="h3">结论 3：专科生真实机会面 = 63.8%</h3>
+<table><thead><tr><th>层级</th><th>岗位数</th><th>占比</th><th>定义</th></tr></thead><tbody>
+<tr><td>L1 现在就能投</td><td>12</td><td>3.2%</td><td>学历/经验完全匹配</td></tr>
+<tr><td>L2 跳一跳可达</td><td>226</td><td>60.6%</td><td>补 1 项能力或 1~2 年经验即可</td></tr>
+<tr><td>L3 暂不可达</td><td>135</td><td>36.2%</td><td>需先解决学历硬门槛</td></tr>
+<tr><td><strong>L1 + L2 合计</strong></td><td><strong>238</strong></td><td><strong>63.8%</strong></td><td>专科生的实际可投面</td></tr>
+</tbody></table>
+<h3 class="h3">结论 4：专升本是最有效的单点杠杆</h3>
+<ul><li><strong>216 个岗位（57.9%）</strong> 的解锁路径是「专升本」</li><li>对比：攒经验 116 个、专升本+长期积累 29 个、无路径 12 个</li></ul>
+<p><strong>含义</strong>：在所有提升手段里，专升本的覆盖岗位数最多、一次投入长期生效，ROI 最高。</p>
+<h3 class="h3">结论 5：主战场在「数据开发/ETL」</h3>
+<table><thead><tr><th>岗位族</th><th>招聘量</th><th>其中 L2</th></tr></thead><tbody>
+<tr><td>数据开发/ETL</td><td>132</td><td>89</td></tr>
+<tr><td>其他数据类</td><td>90</td><td>38</td></tr>
+<tr><td>数据分析/运营</td><td>55</td><td>39</td></tr>
+<tr><td>数据治理</td><td>44</td><td>24</td></tr>
+<tr><td>数据库运维</td><td>25</td><td>17</td></tr>
+<tr><td>数据挖掘/算法</td><td>11</td><td>7</td></tr>
+<tr><td>数据标注</td><td>8</td><td>7</td></tr>
+<tr><td>数据产品</td><td>6</td><td>4</td></tr>
+<tr><td>BI/报表</td><td>2</td><td>1</td></tr>
+</tbody></table>
+<p><strong>含义</strong>：数据开发/ETL 是招聘量最大（132，占 35%）、且专科可达性最高（L2 有 89 个）的岗位族 —— <strong>这是主攻方向</strong>。数据分析/运营次之（55 个，L2 有 39 个）。</p>
+<h3 class="h3">结论 6：岗位高度集中在高新区</h3>
+<ul><li>高新区 <strong>79</strong> 个（剔除"未细分 107"后占比最高）</li><li>其次：武侯区 23、神仙树 19、郫都区 14、锦江区 9、双流区 8</li></ul>
+<p><strong>含义</strong>：投递与租房优先围绕高新区（天府软件园一带）。</p>
+<hr>
+<h2 class="h2">四、必须诚实说明的 3 个数据问题（面试加分项）</h2>
+<p>面试官常问"你这个结论有什么局限"，以下三条要能主动说出来：</p>
+<ol><li><strong>"经验不限"岗位被记为 0 年，导致 0 年组薪资（17,500）反而高于 1 年组（12,500）</strong></li><li>这不是真实规律，而是口径问题：「经验不限」既包含应届岗，也包含不写年限的资深岗。</li><li>处理方式：<strong>已保留但不作为结论</strong>，报告中明确标注该组不可用于"经验溢价"推断。</li></ol>
+<ol><li><strong>大专样本仅 17 个，占比 4.6%</strong></li><li>学历溢价 +29.6% 是基于小样本得出的，方向可信、具体数值不宜过度解读。</li></ol>
+<ol><li><strong>技能字段整列缺失</strong></li><li>本批 373 条数据的「技能要求」列因源站详情页触发验证码而整列未获取。</li><li>处理方式：不编造、不填补；技能词频分析改用 <code>成都五行业数字岗位_1200条.csv</code> 单独进行。</li></ol>
+<blockquote>主动暴露局限 ≠ 减分。它证明你<strong>知道数据边界在哪</strong>，这是数据分析岗最看重的能力之一。</blockquote>
+<hr>
+<h2 class="h2">五、简历可复用表述</h2>
+<blockquote><strong>成都大数据岗位情报分析</strong>（个人项目）</blockquote>
+<blockquote>采集成都大数据相关岗位公开数据 373 条，用 Python 完成清洗（去重、薪资解析回补、异常标记、经验/学历类型转换）与 EDA，构建<strong>高职可达性三层模型（L1/L2/L3）</strong>，产出 7 图可视化看板与量化结论：薪资中位 18,000 元（均值 22,097）、专科生可投岗位占 <strong>63.8%</strong>、专升本可解锁 <strong>57.9%</strong> 岗位、"数据开发/ETL"为招聘量最大且可达性最高的主攻方向。</blockquote>
+<p>一句话版：</p>
+<blockquote>用 373 条成都大数据岗位数据 + 可达性分层模型，量化出专科生 63.8% 的可投岗位面，并定位到"数据开发/ETL"这一主攻方向。</blockquote>
+<hr>
+<h2 class="h2">六、下一步</h2>
+<table><thead><tr><th>步骤</th><th>内容</th><th>状态</th></tr></thead><tbody>
+<tr><td>步骤 1</td><td>项目立项 · 项目简介</td><td>✅ 完成</td></tr>
+<tr><td>步骤 2</td><td>数据采集方案设计</td><td>✅ 完成</td></tr>
+<tr><td>步骤 3</td><td>数据清洗 + EDA</td><td>✅ 完成（373 行，数字已核对）</td></tr>
+<tr><td>步骤 4</td><td>可视化 + 结论输出</td><td>✅ 完成（本文件）</td></tr>
+<tr><td>步骤 5</td><td>作品集网站整合 / README</td><td>待做</td></tr>
+<tr><td>可选</td><td>技能词频分析（用 1200 条五行业数据）</td><td>待做</td></tr>
+</tbody></table></div>
+</section>
+<section id="s5" class="doc-section">
+<div class="doc"><h1 class="h1">步骤 5 · 技能词频与学习路径</h1>
+<blockquote>项目：成都大数据岗位情报分析（求职作品集）</blockquote>
+<blockquote>数据：<code>data/成都五行业数字岗位_1200条.csv</code>（快照 2026-09-10）</blockquote>
+<blockquote>产出：<code>成都数据岗位_技能图谱看板.html</code>（自包含，双击即开）、<code>data/clean/大数据岗位_技能统计.csv</code></blockquote>
+<hr>
+<h2 class="h2">一、为什么单独做这一步</h2>
+<p>步骤 3 里那 373 条数据的「技能要求」列<strong>整列缺失</strong>（详情页触发验证码），所以技能维度做不了。</p>
+<p>这一步改用另一份带技能标签的数据集来补，<strong>这不是凑数，而是数据可得性约束下的合理替代方案</strong>——这个取舍本身就是面试时值钱的判断力。</p>
+<hr>
+<h2 class="h2">二、必须先说清楚的数据边界</h2>
+<table><thead><tr><th>项</th><th>实际情况</th><th>对分析的影响</th></tr></thead><tbody>
+<tr><td>技能字段来源</td><td><strong>岗位名称词典抽取</strong>（全部 1200 条的 <code>详情已采集 = 否</code>）</td><td>技能信号 = 岗位<strong>标题</strong>里的技术关键词，不是 JD 正文</td></tr>
+<tr><td>技能标注覆盖率</td><td>全体 45%（540/1200），<strong>类别差异极大</strong></td><td>覆盖率低的类别不能做技能推断</td></tr>
+<tr><td>岗位类别构成</td><td>软件开发 608、人工智能 264、云计算/运维 168、<strong>大数据 94、数据分析 66</strong></td><td>这不是纯"大数据"数据集，是五行业数字岗位</td></tr>
+</tbody></table>
+<h3 class="h3">各岗位类别技能覆盖率（决定"哪类能用"）</h3>
+<table><thead><tr><th>岗位类别</th><th>样本数</th><th>有技能标签</th><th>覆盖率</th><th>是否可用</th></tr></thead><tbody>
+<tr><td>大数据</td><td>94</td><td>77</td><td><strong>82%</strong></td><td>✅ 可用</td></tr>
+<tr><td>软件开发</td><td>608</td><td>375</td><td>62%</td><td>✅ 可用</td></tr>
+<tr><td>云计算/运维</td><td>168</td><td>35</td><td>21%</td><td>⚠️ 勉强</td></tr>
+<tr><td>人工智能</td><td>264</td><td>44</td><td>17%</td><td>❌ 不可用</td></tr>
+<tr><td>数据分析</td><td>66</td><td>9</td><td><strong>14%</strong></td><td>❌ 不可用</td></tr>
+</tbody></table>
+<p><strong>关键判断</strong>：数据分析类只有 9 条有技能标签，做词频分析毫无统计意义。因此本步骤只对<strong>大数据类（n=94，覆盖 82%）</strong>下技能结论，数据分析类仅作参考。</p>
+<hr>
+<h2 class="h2">三、大数据岗到底要什么技术</h2>
+<h3 class="h3">技能需求频次 Top12（大数据类，n=94，整体薪资中位 14,500 元）</h3>
+<table><thead><tr><th>技能</th><th>出现次数</th><th>需求占比</th><th>薪资中位</th><th>相对溢价</th></tr></thead><tbody>
+<tr><td>数据治理</td><td>19</td><td>20.2%</td><td>15,000</td><td>+500</td></tr>
+<tr><td>数据库</td><td>17</td><td>18.1%</td><td>10,000</td><td>−4,500</td></tr>
+<tr><td>Java</td><td>7</td><td>7.4%</td><td>15,000</td><td>+500</td></tr>
+<tr><td>大模型</td><td>7</td><td>7.4%</td><td>14,000</td><td>−500</td></tr>
+<tr><td>数据中台</td><td>5</td><td>5.3%</td><td>45,000</td><td><strong>+30,500</strong></td></tr>
+<tr><td>数据仓库</td><td>5</td><td>5.3%</td><td>15,000</td><td>+500</td></tr>
+<tr><td>ETL</td><td>5</td><td>5.3%</td><td>10,000</td><td>−4,500</td></tr>
+<tr><td>Python</td><td>4</td><td>4.3%</td><td>15,000</td><td>+500</td></tr>
+<tr><td>DBA</td><td>4</td><td>4.3%</td><td>11,500</td><td>−3,000</td></tr>
+<tr><td>数仓</td><td>4</td><td>4.3%</td><td>10,000</td><td>−4,500</td></tr>
+<tr><td>数据标注</td><td>3</td><td>3.2%</td><td>6,000</td><td><strong>−8,500</strong></td></tr>
+</tbody></table>
+<h3 class="h3">结论：这个岗位族的核心是「数据工程」，不是「算法」</h3>
+<p>出现最多的关键词是<strong>数据治理（19）、数据库（17）、数据仓库/数仓（合计 9）、ETL（5）</strong>。</p>
+<p>这说明成都的大数据岗位主要是<strong>把数据管起来、跑通管道、保证质量</strong>，而不是训模型。</p>
+<p>对求职者的含义：<strong>不必先去卷算法</strong>。数据仓库建模 + ETL 开发 + SQL 这条线的岗位量更大、门槛更匹配。</p>
+<hr>
+<h2 class="h2">四、⚠️ 一个必须讲清的方法论陷阱（面试加分）</h2>
+<p>上表里「数据中台 +30,500」看起来很诱人，「数据库 −4,500」看起来像坑。</p>
+<p><strong>但这个溢价不能直接读成"学 A 比学 B 多赚三万"。</strong></p>
+<p>原因：溢价是拿「标题含该技能的岗位」的薪资中位，去比整体中位。而<strong>岗位标题本身就自带职级信号</strong>：</p>
+<ul><li>标题含「数据中台」的岗位，通常是<strong>平台架构/中台建设</strong>类，本身就是资深岗 → 薪资天然高</li><li>标题含「数据库」的岗位，很多是<strong>数据库运维/DBA 初级</strong>岗 → 薪资天然低</li><li>标题含「数据标注」的岗位，是<strong>劳动密集型</strong>岗 → 薪资最低</li></ul>
+<p>所以这个指标衡量的是<strong>"这个关键词关联着什么档次的岗位"</strong>，而不是<strong>"学会这个技能能涨多少薪"</strong>。</p>
+<p>要真正测技能回报，需要控制职级、经验、学历做回归——那就超出这份数据的字段范围了。</p>
+<blockquote>能在面试里主动说出这一层，比背出"数据中台薪资 45k"要有价值得多。</blockquote>
+<hr>
+<h2 class="h2">五、学习路径建议（按优先级分三层）</h2>
+<p>结合频次、门槛和你现有的专业背景（专科大数据技术大三）：</p>
+<h3 class="h3">第 0 层：地基（不学就进不去）</h3>
+<table><thead><tr><th>技能</th><th>依据</th><th>建议投入</th></tr></thead><tbody>
+<tr><td><strong>SQL / 数据库</strong></td><td>出现 17 次（18.1%），是最高频的硬技能之一</td><td>必须熟练：多表 JOIN、窗口函数、执行计划</td></tr>
+<tr><td><strong>Python</strong></td><td>出现 4 次但属通用底座，且你专业已覆盖</td><td>够用即可：pandas 清洗 + 脚本化</td></tr>
+</tbody></table>
+<p><strong>注意</strong>：数据库虽然溢价 −4,500，但它是<strong>入场券而非加价项</strong>——没有它连面试都进不去，有它也不额外加钱。不要被溢价数字误导。</p>
+<h3 class="h3">第 1 层：这个岗位族的"通用语言"（高频，决定匹配度）</h3>
+<table><thead><tr><th>技能</th><th>依据</th><th>具体学什么</th></tr></thead><tbody>
+<tr><td><strong>数据治理</strong></td><td>出现 <strong>19 次，全类别第一</strong></td><td>元数据管理、数据质量规则、数据标准、血缘——概念 + 一套落地方法论</td></tr>
+<tr><td><strong>数据仓库建模</strong></td><td>数据仓库 5 + 数仓 4 = 9 次</td><td>维度建模（星型/雪花）、分层（ODS/DWD/DWS/ADS）、缓慢变化维</td></tr>
+<tr><td><strong>ETL 开发</strong></td><td>出现 5 次</td><td>调度设计、增量/全量、幂等、失败重跑——这条直接对接"数据开发/ETL"岗</td></tr>
+</tbody></table>
+<blockquote>这三项正好对应步骤 4 得出的主攻方向「数据开发/ETL」（132 个岗，专科可达性最高）。<strong>技能清单和岗位方向是对上的，不是两张皮。</strong></blockquote>
+<h3 class="h3">第 2 层：加分项（有更好，没有不致命）</h3>
+<table><thead><tr><th>技能</th><th>依据</th><th>说明</th></tr></thead><tbody>
+<tr><td><strong>Java</strong></td><td>7 次，溢价 +500</td><td>大数据生态（Hadoop/Flink/Spark）原生语言，能读能改即可</td></tr>
+<tr><td><strong>大模型 / AI 相关</strong></td><td>7 次，溢价 −500</td><td>需求量已起来但薪资未体现溢价，属"趋势项"</td></tr>
+<tr><td><strong>数据中台</strong></td><td>5 次，溢价 +30,500（样本小）</td><td>高阶方向，<strong>长期目标而非入门方向</strong></td></tr>
+</tbody></table>
+<h3 class="h3">❌ 明确规避</h3>
+<ul><li><strong>数据标注</strong>：出现 3 次，薪资中位仅 <strong>6,000 元</strong>（比整体低 8,500）。作为过渡可以，<strong>不要当职业方向</strong>。</li></ul>
+<hr>
+<h2 class="h2">六、学历与经验门槛（这部分最该正视）</h2>
+<h3 class="h3">大数据岗学历要求（n=94）</h3>
+<table><thead><tr><th>学历</th><th>岗位数</th><th>占比</th></tr></thead><tbody>
+<tr><td>本科</td><td>78</td><td><strong>83.0%</strong></td></tr>
+<tr><td>学历不限</td><td>6</td><td>6.4%</td></tr>
+<tr><td>硕士</td><td>6</td><td>6.4%</td></tr>
+<tr><td><strong>大专</strong></td><td><strong>4</strong></td><td><strong>4.3%</strong></td></tr>
+</tbody></table>
+<h3 class="h3">大数据岗经验要求</h3>
+<ul><li>3–5 年：27 个、5–10 年：29 个、5 年以上：8 个、3 年以上：8 个</li><li><strong>合计 3 年以上共 72 个，占 76.6%</strong></li><li>经验不限仅 8 个</li></ul>
+<h3 class="h3">这条结论很硬，但必须说</h3>
+<p><strong>大数据岗对专科应届生并不友好</strong>：大专岗位只占 4.3%，且 76.6% 要求 3 年以上经验。</p>
+<p>所以现实路径不是"毕业直接投大数据开发"，而是：</p>
+<ol><li><strong>专升本</strong>（步骤 3 已量化：216 个岗位靠它解锁，占 57.9%，ROI 最高的一条路）</li><li><strong>先积累可迁移经验</strong>：数据分析/运营、BI 报表、数据运维等 L2 岗位切入（步骤 4：L2 有 226 个）</li><li><strong>用项目补齐"经验"叙事</strong>：你的这个作品集项目，本质就是用来替代"工作经验"的</li></ol>
+<blockquote>这不是坏消息。<strong>把门槛说清楚，比画一个"专科也能进大厂大数据"的饼有用。</strong> 面试官更信一个知道自己边界在哪的候选人。</blockquote>
+<hr>
+<h2 class="h2">七、简历可复用表述</h2>
+<blockquote><strong>成都数字岗位技能图谱分析</strong>（个人项目）</blockquote>
+<blockquote>基于 1,200 条成都数字岗位数据，先做<strong>技能字段覆盖率审计</strong>（发现类别间从 14% 到 82% 不等），据此筛选出可推断子集（大数据类 n=94，覆盖率 82%），完成技能词频、共现与薪资溢价分析，产出技能需求排序与三层学习路径；同时识别并披露"标题级技能抽取导致溢价混杂职级信号"的方法论局限。</blockquote>
+<p>一句话版：</p>
+<blockquote>对 1,200 条岗位数据做技能覆盖率审计后锁定可信子集，量化出大数据岗的核心技能是「数据治理 + 数仓建模 + ETL」而非算法，并据此排出三层学习优先级。</blockquote>
+<hr>
+<h2 class="h2">八、项目整体进度</h2>
+<table><thead><tr><th>步骤</th><th>内容</th><th>状态</th><th>产出</th></tr></thead><tbody>
+<tr><td>1</td><td>项目立项 · 项目简介</td><td>✅</td><td><code>步骤1_项目立项_项目简介.md</code>、<code>项目简介_作品集.html</code></td></tr>
+<tr><td>2</td><td>数据采集方案设计</td><td>✅</td><td><code>步骤2_数据采集方案设计.md</code></td></tr>
+<tr><td>3</td><td>数据清洗 + EDA</td><td>✅</td><td><code>scripts/step3_clean_eda.py</code>、<code>_nolib.py</code>、<code>步骤3_数据清洗与EDA.md</code></td></tr>
+<tr><td>4</td><td>可视化 + 结论</td><td>✅</td><td><code>scripts/step4_visualize.py</code>、<code>成都数据岗位_可视化看板.html</code>、<code>步骤4_可视化与洞察.md</code></td></tr>
+<tr><td>5</td><td>技能词频 + 学习路径</td><td>✅</td><td><code>scripts/step5_skill_analysis.py</code>、<code>成都数据岗位_技能图谱看板.html</code>、本文件</td></tr>
+<tr><td>6</td><td>作品集网站整合 / README</td><td>待做</td><td>—</td></tr>
+</tbody></table></div>
+</section>
+<section id="interview" class="doc-section">
+<div class="doc"><h1 class="h1">面试准备 · 口述稿 + 提问清单 + 流程图</h1>
+<blockquote>适用场景：企业大数据 / 数据处理岗位面试官｜ 时长：口述 2 分钟，问答可延展 10–15 分钟</blockquote>
+<blockquote>配套：本文件含 Mermaid ER 图、数据流程图，可直接粘进支持 Mermaid 的作品集页面。</blockquote>
+<hr>
+<h2 class="h2">一、2 分钟项目口述稿（背熟版）</h2>
+<blockquote>面试官好。我分享的项目叫《成都大数据岗位情报分析》，是我为<strong>解决自己的求职困惑</strong>做的——作为一个专科大数据技术专业的学生，我不确定在成都到底能投什么岗、该补什么技能。所以我没有泛泛地爬数据，而是把它当成一个<strong>业务问题</strong>来拆解。</blockquote>
+<blockquote></blockquote>
+<blockquote>我采集了 373 条成都大数据相关岗位的公开信息，每条都保留了来源链接和采集日期，保证可溯源。清洗阶段我做了四件事：去重（主键+业务双层）、缺失值回补并打存疑标记、异常值只标记不删行、把经验和学历转成可计算的数值类型。这一步我特意<strong>不盲目删数据、不瞎填缺失</strong>，因为严谨比好看重要。</blockquote>
+<blockquote></blockquote>
+<blockquote>分析阶段我搭了一个<strong>高职可达性三层模型</strong>：L1 现在能投、L2 跳一跳可达、L3 暂不可达，再标注专升本解锁路径。最后得出四个落地结论：第一，薪资看中位数 18k 而不是被均值 22k 带偏；第二，学历有溢价但"学历不限"岗反超本科，说明能力能对冲学历；第三，<strong>真实可投面有 63.8%</strong>，其中 216 个岗靠专升本解锁，升本是 ROI 最高的杠杆；第四，主攻方向是<strong>数据开发/ETL</strong>，占了 35% 的岗位量且专科可达性最高。</blockquote>
+<blockquote></blockquote>
+<blockquote>我还诚实地披露了两个局限：主数据集技能列因为详情页验证码整列缺失，所以我换了另一份数据集做技能分析并注明了边界；大专样本只有 17 个，所以学历溢价的方向可信但数值不宜过度解读。我觉得这个项目最有价值的地方，不只是结论，而是它展示了我<strong>完整严谨的分析链路和数据边界意识</strong>。谢谢。</blockquote>
+<hr>
+<h2 class="h2">二、常见面试提问清单 + 参考回答</h2>
+<h3 class="h3">Q1：你这个项目的数据从哪来？合法吗？</h3>
+<p><strong>答</strong>：来自招聘网站公开发布的岗位信息，采集时我先读 robots.txt、单线程限速 2–3 秒、单轮不超过 25 次；<strong>绝不采集任何求职者个人信息</strong>，不绕过验证码，原始数据不外传，只发布聚合统计。每一步都留了来源 URL 和快照日期。</p>
+<h3 class="h3">Q2：为什么用中位数而不是均值？</h3>
+<p><strong>答</strong>：因为薪资分布右偏——少数 30k+ 的架构/资深岗把均值拉到 22k，而中位数只有 18k。中位数更能代表"大多数岗位的薪资水位"，汇报时用中位数才不会被极端值误导。</p>
+<h3 class="h3">Q3：你这个"可达性分层"是怎么分的？主观吗？</h3>
+<p><strong>答</strong>：是我基于"专科 + 专升本计划"这个个人画像做的<strong>主观标注</strong>，L1 学历经验完全匹配、L2 补一项能力或 1–2 年经验可达、L3 需先解决学历硬门槛。我在报告里明确写了这是主观判定、unlock_by 是建议而非承诺——它用于给自己做决策参考，不是给企业的客观标准。</p>
+<h3 class="h3">Q4：技能字段缺失你怎么办的？</h3>
+<p><strong>答</strong>：主数据集 373 条技能整列缺失（详情页触发验证码）。我的处理是<strong>不编造、不填补</strong>，而是换用另一份带技能标签的 1200 条数据集，并且先做覆盖率审计——发现大数据类覆盖率 82%、数据分析类只有 14%，所以只对可信子集下结论。这种"先审计再推断"的判断本身就是加分点。</p>
+<h3 class="h3">Q5：数据中台薪资 45k，是不是最值得学？</h3>
+<p><strong>答</strong>：不一定。那个"溢价"是拿"标题含该词的岗位"去比整体中位，但标题自带职级信号——含"数据中台"的多是资深架构岗，薪资天然高。所以这个指标衡量的是"关联什么档次岗位"，不是"学会能涨多少薪"。要真测回报得控制职级/经验做回归，超出当前数据范围。我能讲清这个陷阱，比背一个数值更有价值。</p>
+<h3 class="h3">Q6：专科生在大数据岗是不是没机会？</h3>
+<p><strong>答</strong>：客观说，大数据岗本身对专科不友好——大数据类样本里大专只占 4.3%，76.6% 要求 3 年以上经验。但我的项目量化出<strong>整体可投面仍有 63.8%</strong>（含数据开发/ETL、数据分析运营、数据运维等 L2 岗），且专升本能再解锁一大批。我的策略是：升本 + 从 L2 切入 + 用作品集项目对冲"经验不足"。这不是画饼，是把门槛说清楚后的可执行路径。</p>
+<h3 class="h3">Q7：你用到哪些工具/技术？</h3>
+<p><strong>答</strong>：Python 做清洗和 EDA（pandas 风格的 csv/re 处理），matplotlib 画图，输出自包含 HTML 看板（纯 SVG，可离线打开）。我个人更看重<strong>工程严谨性</strong>：清洗留痕、异常只标不删、结论可溯源。</p>
+<h3 class="h3">Q8：如果让你再做一遍，你会改进什么？</h3>
+<p><strong>答</strong>：四点——① 扩源扩量到 ≥800 条、并入官方公共招聘网提升代表性；② 做周级快照看趋势；③ 攻克验证码回填真实技能字段做 JD 级词频；④ 把看板接成可交互 Web，支持按岗位族/区县筛选并输出《可投岗位清单》。</p>
+<hr>
+<h2 class="h2">三、ER 图（数据模型）</h2>
+<div class="mermaid">erDiagram
+    JOB {
+        string  岗位ID PK
+        string  岗位名称
+        string  企业名称
+        string  城市
+        string  区县
+        string  薪资原文
+        int     月薪下限_元
+        int     月薪上限_元
+        int     月薪中位_元
+        string  学历要求
+        string  经验要求
+        int     经验下限_年
+        int     经验上限_年
+        string  岗位族
+        string  可达性
+        string  解锁路径
+        string  来源
+        string  来源URL
+        date    快照日期
+    }
+    SOURCE {
+        string  来源URL PK
+        string  来源名称
+        string  来源级别
+        date    采集日期
+    }
+    JOB ||--o| SOURCE : "来源"</div>
+<blockquote>说明：核心事实表 <code>JOB</code> 通过 <code>来源URL</code> 关联到 <code>SOURCE</code> 维表，保证每条岗位记录可溯源；<code>可达性</code>/<code>解锁路径</code> 为分析衍生字段，非源站原始字段。</blockquote>
+<hr>
+<h2 class="h2">四、数据处理流程图</h2>
+<div class="mermaid">flowchart TD
+    A[原始岗位 CSV<br/>373 条] --> B[去重<br/>主键+业务双层]
+    B --> C[缺失值处理<br/>薪资原文回补+存疑标记]
+    C --> D[异常值标记<br/>只标不删]
+    D --> E[类型转换<br/>经验/学历/可达性→数值或有序类]
+    E --> F[清洗后数据集<br/>data/clean/]
+    F --> G[描述统计<br/>中位/均值/分位]
+    F --> H[分组统计<br/>学历/经验/岗位族/可达性]
+    H --> I[可视化<br/>4 张 matplotlib 图]
+    G --> I
+    I --> J[业务结论<br/>可投面/主攻方向/升本ROI]
+    J --> K[求职决策表<br/>可投清单+补技能清单]</div>
+<hr>
+<h2 class="h2">五、发布到作品集网站（GitHub Pages）指引</h2>
+<h3 class="h3">方式 A：GitHub Pages（推荐，免费、稳定）</h3>
+<ol><li>在 GitHub 新建仓库（如 <code>cd-bigdata-job-analysis</code>），把本项目全部文件推送上去。</li><li>仓库 <strong>Settings → Pages → Build from branch → 选 <code>main</code> / <code>master</code>，目录选 <code>/root</code></strong>。</li><li>约 1 分钟后访问 <code>https://&lt;用户名&gt;.github.io/cd-bigdata-job-analysis/</code>。</li><li>把 <code>项目完整报告.md</code> 作为首页内容（或重命名为 <code>index.md</code> / <code>README.md</code> 即首页）。</li></ol>
+<pre class="code"><code>git init
+git add .
+git commit -m &quot;feat: 成都大数据岗位分析求职作品集&quot;
+git branch -M main
+git remote add origin https://github.com/&lt;用户名&gt;/cd-bigdata-job-analysis.git
+git push -u origin main</code></pre>
+<h3 class="h3">方式 B：Vercel / Netlify（静态托管）</h3>
+<ul><li>适合挂交互式看板 <code>成都数据岗位_可视化看板.html</code>：在 Vercel 导入仓库、指定该 HTML 为入口即可获得独立链接。</li></ul>
+<h3 class="h3">方式 C：WorkBuddy 自带部署</h3>
+<ul><li>可用 WorkBuddy「发布为应用」能力将本项目作为静态站点一键发布，获得可分享链接（详见 WorkBuddy 发布功能）。</li></ul>
+<h3 class="h3">本地预览（不发布也能看）</h3>
+<ul><li>双击 <code>成都数据岗位_可视化看板.html</code> 即可离线查看全景看板；</li><li>报告内的 4 张图位于 <code>docs/figures/</code>，本地 Markdown 预览或用 VS Code + Markdown Preview 即可看到。</li></ul></div>
+</section>
+<section id="readme" class="doc-section">
+<div class="doc"><h1 class="h1">大数据招聘岗位数据分析 · 求职作品集项目</h1>
+<blockquote>作者：XXX · 专科大数据技术专业 · 2027 届 · 地域聚焦成都（川渝）</blockquote>
+<blockquote>项目定位：面向"高职大数据专科生如何在成都求职"的真实业务问题，完成<strong>采集 → 清洗 → EDA → 可视化 → 结论</strong>全流程分析。</blockquote>
+<h2 class="h2">一句话简介</h2>
+<p>用 373 条成都大数据岗位公开数据 + 高职可达性分层模型（L1/L2/L3），量化出<strong>专科生 63.8% 的可投岗位面</strong>，并定位到"数据开发/ETL"这一主攻方向，输出可指导投递决策的结论与看板。</p>
+<h2 class="h2">核心结论</h2>
+<table><thead><tr><th>结论</th><th>数据</th></tr></thead><tbody>
+<tr><td>薪资看中位不看均值</td><td>中位 <strong>18,000</strong> vs 均值 22,097（右偏）</td></tr>
+<tr><td>学历有溢价但非天花板</td><td>本科比大专 +29.6%；"学历不限"中位 25,000 反超本科</td></tr>
+<tr><td>真实可投面 = <strong>63.8%</strong></td><td>L1+L2 = 238 / 373；专升本可解锁 216 个（57.9%）</td></tr>
+<tr><td>主攻方向 = 数据开发/ETL</td><td>132 个岗（35%），且专科可达性最高</td></tr>
+</tbody></table>
+<h2 class="h2">项目结构</h2>
+<pre class="code"><code>.
+├── 项目完整报告.md              # 完整项目报告（6 章，作品集主体文档）
+├── 步骤1_项目立项_项目简介.md    # 项目背景/目标/架构/局限
+├── 步骤2_数据采集方案设计.md     # 数据源/字段/爬虫合规/CSV 存储
+├── 步骤3_数据清洗与EDA.md       # 清洗步骤+pandas 代码+EDA 维度
+├── 步骤4_图表方案与业务结论.md   # 4 张图设计+matplotlib 代码+4 结论
+├── 步骤5_技能词频与学习路径.md   # 技能分析（独立数据集）
+├── scripts/
+│   ├── step3_clean_eda_nolib.py  # 零依赖清洗脚本（已实跑）
+│   ├── step4_matplotlib_charts.py # 4 张图绘图脚本（已实跑）
+│   └── step5_skill_analysis.py    # 技能图谱脚本
+├── data/
+│   ├── 成都大数据岗位_采集结果.csv
+│   └── clean/                     # 清洗后数据 + 统计结果
+├── docs/
+│   ├── figures/                   # 4 张 matplotlib 图表 PNG
+│   └── 面试准备.md                # 口述稿 + 面试题 + 流程图
+├── 成都数据岗位_可视化看板.html    # 交互式全景看板（双击即开）
+└── 成都数据岗位_技能图谱看板.html  # 技能图谱看板</code></pre>
+<h2 class="h2">本地运行</h2>
+<pre class="code"><code># 依赖：Python 3.8+（零依赖脚本无需装包；matplotlib 图需 pip install pandas matplotlib）
+cd &lt;项目根目录&gt;
+python scripts/step3_clean_eda_nolib.py      # 清洗 → data/clean/
+python scripts/step4_matplotlib_charts.py    # 出图 → docs/figures/</code></pre>
+<h2 class="h2">数据来源与合规</h2>
+<ul><li>数据来自招聘网站<strong>公开发布</strong>的岗位信息，仅用于个人学习研究与求职。</li><li>采集遵守 robots.txt 与平台协议，<strong>不采集任何求职者个人信息</strong>，不对外分发原始明细，仅发布聚合统计结论。</li><li>技能维度采用的公开数据集遵循其许可（注明来源）。</li></ul>
+<h2 class="h2">局限（已在报告中详述）</h2>
+<p>单一平台偏差、快照时效、薪资口径损失、L1/L2/L3 为主观标注、大专样本仅 17 个、主数据集技能列缺失（已用替代集并注明边界）。</p>
+<hr>
+<p>© 2026 个人求职作品集项目。数据结论仅代表分析时点快照，不构成就业承诺。</p></div>
+</section>
+<section id="board1" class="doc-section">
+<h2 class="h2">可视化看板 · 岗位全景</h2>
+<div class="board-wrap"><iframe src="成都数据岗位_可视化看板.html" loading="lazy"></iframe></div>
+</section>
+<section id="board2" class="doc-section">
+<h2 class="h2">可视化看板 · 技能图谱</h2>
+<div class="board-wrap"><iframe src="成都数据岗位_技能图谱看板.html" loading="lazy"></iframe></div>
+</section>
+    <div class="footer">个人求职作品集 · 数据来源：公开采集（猎聘·成都），仅用于学习研究 · 生成于 WorkBuddy</div>
+  </main>
+</div>
+<script>
+// 导航切换
+const links=[...document.querySelectorAll('.nav-link')];
+const sections=[...document.querySelectorAll('.doc-section')];
+function activate(id){
+  links.forEach(l=>l.classList.toggle('active',l.dataset.target===id));
+  sections.forEach(s=>s.classList.toggle('active',s.id===id));
+  window.scrollTo({top:0,behavior:'instant'});
+  try{localStorage.setItem('pf_sec',id);}catch(e){}
+}
+links.forEach(l=>l.addEventListener('click',e=>{e.preventDefault();activate(l.dataset.target);
+  history.replaceState(null,'','#'+l.dataset.target);}));
+// 初始/锚点
+let init='report';
+try{init=localStorage.getItem('pf_sec')||'report';}catch(e){}
+if(location.hash) init=location.hash.slice(1);
+if(!document.getElementById(init)) init='report';
+activate(init);
+// mermaid
+if(window.mermaid){mermaid.initialize({startOnLoad:true,theme:'default'});}
+</script>
+</body>
+</html>

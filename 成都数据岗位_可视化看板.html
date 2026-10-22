@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>成都大数据岗位情报 · 可视化看板</title>
+<style>
+:root{
+  --ink:#1f2937; --ink2:#6b7280; --line:#e5e7eb; --bg:#f6f7f9;
+  --card:#ffffff; --blue:#2563eb; --teal:#0d9488; --amber:#d97706;
+}
+*{box-sizing:border-box;}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:'Microsoft YaHei','PingFang SC','Hiragino Sans GB',-apple-system,sans-serif;
+  line-height:1.65;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:1180px;margin:0 auto;padding:40px 24px 64px;}
+header{margin-bottom:32px;}
+.eyebrow{font-size:12px;letter-spacing:.14em;color:var(--blue);font-weight:700;text-transform:uppercase;}
+h1{font-size:30px;margin:8px 0 10px;font-weight:800;letter-spacing:-.01em;}
+.sub{color:var(--ink2);font-size:14px;max-width:760px;}
+.kpis{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin:28px 0 32px;}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 16px 14px;}
+.kpi .v{font-size:26px;font-weight:800;letter-spacing:-.02em;}
+.kpi .l{font-size:12px;color:var(--ink2);margin-top:2px;}
+.kpi.hi{background:linear-gradient(160deg,#eff6ff,#ffffff);border-color:#bfdbfe;}
+.kpi.hi .v{color:var(--blue);}
+section{margin-bottom:26px;}
+h2{font-size:17px;margin:0 0 4px;font-weight:700;display:flex;align-items:center;gap:8px;}
+h2 .n{display:inline-flex;width:22px;height:22px;border-radius:6px;background:#eff6ff;color:var(--blue);
+  font-size:12px;align-items:center;justify-content:center;font-weight:700;flex:none;}
+.q{color:var(--ink2);font-size:13px;margin:0 0 12px 30px;}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;}
+.card h3{font-size:14px;margin:0 0 2px;font-weight:700;}
+.card .hint{font-size:12px;color:var(--ink2);margin:0 0 14px;}
+.full{grid-column:1 / -1;}
+.insight{background:linear-gradient(150deg,#f0fdfa,#ffffff);border:1px solid #99f6e4;border-radius:14px;padding:22px 24px;}
+.insight h3{margin:0 0 12px;font-size:15px;}
+.insight ul{margin:0;padding-left:20px;}
+.insight li{margin-bottom:10px;font-size:13.5px;}
+.insight b{color:var(--teal);}
+.tag{display:inline-block;font-size:11px;padding:1px 7px;border-radius:20px;
+  background:#eff6ff;color:var(--blue);font-weight:700;margin-right:6px;}
+footer{margin-top:36px;padding-top:18px;border-top:1px solid var(--line);
+  font-size:12px;color:var(--ink2);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;}
+@media(max-width:900px){.kpis{grid-template-columns:repeat(2,1fr);}.grid{grid-template-columns:1fr;}}
+.pct{color:var(--ink2);font-size:12px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="eyebrow">Chengdu · Big Data Job Market</div>
+  <h1>成都大数据岗位情报看板</h1>
+  <p class="sub">基于 <b>373</b> 条成都大数据相关岗位快照数据（快照日期 2026-09-09），
+  按「薪资 / 学历 / 经验 / 岗位族 / 高职可达性」五个维度切分，
+  用于回答一个具体问题：<b>作为成都的高职大数据专科生，我能投什么岗、该补什么技能、薪资天花板在哪。</b></p>
+</header>
+
+<div class="kpis">
+  <div class="kpi"><div class="v">373</div><div class="l">有效岗位样本</div></div>
+  <div class="kpi hi"><div class="v">18k</div><div class="l">薪资中位数</div></div>
+  <div class="kpi"><div class="v">12</div><div class="l">L1 现在就能投</div></div>
+  <div class="kpi"><div class="v">226</div><div class="l">L2 跳一跳可达</div></div>
+  <div class="kpi"><div class="v">216</div><div class="l">专升本可解锁</div></div>
+</div>
+
+<section>
+  <h2><span class="n">1</span>薪资分布：中位数比均值更值得信</h2>
+  <p class="q">业务问题：成都大数据岗位的薪资水平到底在什么区间？该用中位数还是均值做判断？</p>
+  <div class="card">
+    <h3>月薪中位分布直方图</h3>
+    <p class="hint">均值 22097 被少量高薪岗位拉高，中位数 18000 更能代表「普通岗位」的真实水平。</p>
+    <svg viewBox="0 0 640 250" width="100%" preserveAspectRatio="xMidYMid meet" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB',sans-serif"><line x1="48" y1="206.0" x2="624" y2="206.0" stroke="#e5e7eb" stroke-width="1"/><text x="42" y="209.0" font-size="10" fill="#6b7280" text-anchor="end">0</text><line x1="48" y1="159.0" x2="624" y2="159.0" stroke="#e5e7eb" stroke-width="1"/><text x="42" y="162.0" font-size="10" fill="#6b7280" text-anchor="end">88</text><line x1="48" y1="112.0" x2="624" y2="112.0" stroke="#e5e7eb" stroke-width="1"/><text x="42" y="115.0" font-size="10" fill="#6b7280" text-anchor="end">176</text><line x1="48" y1="65.0" x2="624" y2="65.0" stroke="#e5e7eb" stroke-width="1"/><text x="42" y="68.0" font-size="10" fill="#6b7280" text-anchor="end">264</text><line x1="48" y1="18.0" x2="624" y2="18.0" stroke="#e5e7eb" stroke-width="1"/><text x="42" y="21.0" font-size="10" fill="#6b7280" text-anchor="end">352</text><rect x="54.9" y="18.0" width="43.8" height="188.0" rx="2" fill="#2563eb"/><text x="76.8" y="14.0" font-size="10" fill="#6b7280" text-anchor="middle">352</text><text x="76.8" y="222" font-size="10" fill="#6b7280" text-anchor="middle">5k</text><rect x="112.5" y="195.9" width="43.8" height="10.1" rx="2" fill="#2563eb"/><text x="134.4" y="191.9" font-size="10" fill="#6b7280" text-anchor="middle">19</text><text x="134.4" y="222" font-size="10" fill="#6b7280" text-anchor="middle">44.5k</text><rect x="170.1" y="206.0" width="43.8" height="0.0" rx="2" fill="#2563eb"/><text x="192.0" y="222" font-size="10" fill="#6b7280" text-anchor="middle">84k</text><rect x="227.7" y="205.5" width="43.8" height="0.5" rx="2" fill="#2563eb"/><text x="249.6" y="201.5" font-size="10" fill="#6b7280" text-anchor="middle">1</text><text x="249.6" y="222" font-size="10" fill="#6b7280" text-anchor="middle">123.5k</text><rect x="285.3" y="206.0" width="43.8" height="0.0" rx="2" fill="#2563eb"/><text x="307.2" y="222" font-size="10" fill="#6b7280" text-anchor="middle">163k</text><rect x="342.9" y="206.0" width="43.8" height="0.0" rx="2" fill="#2563eb"/><text x="364.8" y="222" font-size="10" fill="#6b7280" text-anchor="middle">202.5k</text><rect x="400.5" y="206.0" width="43.8" height="0.0" rx="2" fill="#2563eb"/><text x="422.4" y="222" font-size="10" fill="#6b7280" text-anchor="middle">242k</text><rect x="458.1" y="206.0" width="43.8" height="0.0" rx="2" fill="#2563eb"/><text x="480.0" y="222" font-size="10" fill="#6b7280" text-anchor="middle">281.5k</text><rect x="515.7" y="206.0" width="43.8" height="0.0" rx="2" fill="#2563eb"/><text x="537.6" y="222" font-size="10" fill="#6b7280" text-anchor="middle">321k</text><rect x="573.3" y="205.5" width="43.8" height="0.5" rx="2" fill="#2563eb"/><text x="595.2" y="201.5" font-size="10" fill="#6b7280" text-anchor="middle">1</text><text x="595.2" y="222" font-size="10" fill="#6b7280" text-anchor="middle">360.5k</text><line x1="67.0" y1="18" x2="67.0" y2="206" stroke="#dc2626" stroke-width="2" stroke-dasharray="5 4"/><text x="67.0" y="14" font-size="11" font-weight="600" fill="#dc2626" text-anchor="middle">中位 18k</text><text x="320" y="244" font-size="10" fill="#6b7280" text-anchor="middle">月薪中位（元）</text></svg>
+  </div>
+</section>
+
+<div class="grid">
+  <div class="card">
+    <h3>学历溢价：本科比专科高多少</h3>
+    <p class="hint">条形长度 = 该学历薪资中位数，右侧标注岗位数与中位数。</p>
+    <svg viewBox="0 0 640 156" width="100%" preserveAspectRatio="xMidYMid meet" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB',sans-serif"><rect x="96" y="10" width="466" height="20" rx="3" fill="#2563eb"/><text x="88" y="26" font-size="12" fill="#1f2937" text-anchor="end">学历不限</text><text x="568" y="26" font-size="12" font-weight="600" fill="#1f2937">25k  ·  17岗</text><rect x="96" y="44" width="419" height="20" rx="3" fill="#2563eb"/><text x="88" y="60" font-size="12" fill="#1f2937" text-anchor="end">硕士</text><text x="521" y="60" font-size="12" font-weight="600" fill="#1f2937">22.5k  ·  29岗</text><rect x="96" y="78" width="326" height="20" rx="3" fill="#2563eb"/><text x="88" y="94" font-size="12" fill="#1f2937" text-anchor="end">本科</text><text x="428" y="94" font-size="12" font-weight="600" fill="#1f2937">17.5k  ·  310岗</text><rect x="96" y="112" width="251" height="20" rx="3" fill="#2563eb"/><text x="88" y="128" font-size="12" fill="#1f2937" text-anchor="end">大专</text><text x="353" y="128" font-size="12" font-weight="600" fill="#1f2937">13.5k  ·  17岗</text></svg>
+  </div>
+  <div class="card">
+    <h3>经验溢价：几年经验最值钱</h3>
+    <p class="hint">按「经验下限」分组，看薪资随年限的爬升曲线。</p>
+    <svg viewBox="0 0 640 326" width="100%" preserveAspectRatio="xMidYMid meet" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB',sans-serif"><rect x="96" y="10" width="233" height="20" rx="3" fill="#2563eb"/><text x="88" y="26" font-size="12" fill="#1f2937" text-anchor="end">0年</text><text x="335" y="26" font-size="12" font-weight="600" fill="#1f2937">17.5k  ·  48岗</text><rect x="96" y="44" width="166" height="20" rx="3" fill="#2563eb"/><text x="88" y="60" font-size="12" fill="#1f2937" text-anchor="end">1年</text><text x="268" y="60" font-size="12" font-weight="600" fill="#1f2937">12.5k  ·  53岗</text><rect x="96" y="78" width="199" height="20" rx="3" fill="#2563eb"/><text x="88" y="94" font-size="12" fill="#1f2937" text-anchor="end">2年</text><text x="301" y="94" font-size="12" font-weight="600" fill="#1f2937">15k  ·  18岗</text><rect x="96" y="112" width="219" height="20" rx="3" fill="#2563eb"/><text x="88" y="128" font-size="12" fill="#1f2937" text-anchor="end">3年</text><text x="321" y="128" font-size="12" font-weight="600" fill="#1f2937">16.5k  ·  137岗</text><rect x="96" y="146" width="173" height="20" rx="3" fill="#2563eb"/><text x="88" y="162" font-size="12" fill="#1f2937" text-anchor="end">4年</text><text x="275" y="162" font-size="12" font-weight="600" fill="#1f2937">13k  ·  3岗</text><rect x="96" y="180" width="299" height="20" rx="3" fill="#2563eb"/><text x="88" y="196" font-size="12" fill="#1f2937" text-anchor="end">5年</text><text x="401" y="196" font-size="12" font-weight="600" fill="#1f2937">22.5k  ·  100岗</text><rect x="96" y="214" width="399" height="20" rx="3" fill="#2563eb"/><text x="88" y="230" font-size="12" fill="#1f2937" text-anchor="end">7年</text><text x="501" y="230" font-size="12" font-weight="600" fill="#1f2937">30k  ·  3岗</text><rect x="96" y="248" width="379" height="20" rx="3" fill="#2563eb"/><text x="88" y="264" font-size="12" fill="#1f2937" text-anchor="end">8年</text><text x="481" y="264" font-size="12" font-weight="600" fill="#1f2937">28.5k  ·  5岗</text><rect x="96" y="282" width="466" height="20" rx="3" fill="#2563eb"/><text x="88" y="298" font-size="12" fill="#1f2937" text-anchor="end">10年</text><text x="568" y="298" font-size="12" font-weight="600" fill="#1f2937">35k  ·  6岗</text></svg>
+  </div>
+</div>
+
+<div class="grid" style="margin-top:20px;">
+  <div class="card">
+    <h3>岗位族招聘量 Top</h3>
+    <p class="hint">哪些岗位招得最多 —— 决定你该往哪个方向投。</p>
+    <svg viewBox="0 0 640 326" width="100%" preserveAspectRatio="xMidYMid meet" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB',sans-serif"><rect x="96" y="10" width="466" height="20" rx="3" fill="#2563eb"/><text x="88" y="26" font-size="12" fill="#1f2937" text-anchor="end">数据开发/ETL</text><text x="568" y="26" font-size="12" font-weight="600" fill="#1f2937">132 个岗位</text><rect x="96" y="44" width="317" height="20" rx="3" fill="#2563eb"/><text x="88" y="60" font-size="12" fill="#1f2937" text-anchor="end">其他数据类</text><text x="419" y="60" font-size="12" font-weight="600" fill="#1f2937">90 个岗位</text><rect x="96" y="78" width="194" height="20" rx="3" fill="#2563eb"/><text x="88" y="94" font-size="12" fill="#1f2937" text-anchor="end">数据分析/运营</text><text x="296" y="94" font-size="12" font-weight="600" fill="#1f2937">55 个岗位</text><rect x="96" y="112" width="155" height="20" rx="3" fill="#2563eb"/><text x="88" y="128" font-size="12" fill="#1f2937" text-anchor="end">数据治理</text><text x="257" y="128" font-size="12" font-weight="600" fill="#1f2937">44 个岗位</text><rect x="96" y="146" width="88" height="20" rx="3" fill="#2563eb"/><text x="88" y="162" font-size="12" fill="#1f2937" text-anchor="end">数据库运维</text><text x="190" y="162" font-size="12" font-weight="600" fill="#1f2937">25 个岗位</text><rect x="96" y="180" width="38" height="20" rx="3" fill="#2563eb"/><text x="88" y="196" font-size="12" fill="#1f2937" text-anchor="end">数据挖掘/算法</text><text x="140" y="196" font-size="12" font-weight="600" fill="#1f2937">11 个岗位</text><rect x="96" y="214" width="28" height="20" rx="3" fill="#2563eb"/><text x="88" y="230" font-size="12" fill="#1f2937" text-anchor="end">数据标注</text><text x="130" y="230" font-size="12" font-weight="600" fill="#1f2937">8 个岗位</text><rect x="96" y="248" width="21" height="20" rx="3" fill="#2563eb"/><text x="88" y="264" font-size="12" fill="#1f2937" text-anchor="end">数据产品</text><text x="123" y="264" font-size="12" font-weight="600" fill="#1f2937">6 个岗位</text><rect x="96" y="282" width="7" height="20" rx="3" fill="#2563eb"/><text x="88" y="298" font-size="12" fill="#1f2937" text-anchor="end">BI/报表</text><text x="109" y="298" font-size="12" font-weight="600" fill="#1f2937">2 个岗位</text></svg>
+  </div>
+  <div class="card">
+    <h3>高职可达性分层</h3>
+    <p class="hint">L1 现在就能投 / L2 跳一跳可达 / L3 需先补学历或经验。</p>
+    <svg viewBox="0 0 560 200" width="100%" preserveAspectRatio="xMidYMid meet" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB',sans-serif"><path d="M 106.0 38.0 A 62 62 0 0 1 118.4 39.3" stroke="#0d9488" stroke-width="26" fill="none" stroke-linecap="butt"/><path d="M 118.4 39.3 A 62 62 0 1 1 58.7 140.1" stroke="#2563eb" stroke-width="26" fill="none" stroke-linecap="butt"/><path d="M 58.7 140.1 A 62 62 0 0 1 106.0 38.0" stroke="#cbd5e1" stroke-width="26" fill="none" stroke-linecap="butt"/><text x="106" y="102" font-size="20" font-weight="700" fill="#1f2937" text-anchor="middle">373</text><text x="106" y="118" font-size="10" fill="#6b7280" text-anchor="middle">岗位总数</text><rect x="350" y="26" width="11" height="11" rx="2" fill="#0d9488"/><text x="367" y="36" font-size="12" fill="#1f2937">L1 现在就能投  12（3%）</text><rect x="350" y="52" width="11" height="11" rx="2" fill="#2563eb"/><text x="367" y="62" font-size="12" fill="#1f2937">L2 跳一跳可达  226（61%）</text><rect x="350" y="78" width="11" height="11" rx="2" fill="#cbd5e1"/><text x="367" y="88" font-size="12" fill="#1f2937">L3 暂不可达  135（36%）</text></svg>
+  </div>
+</div>
+
+<section style="margin-top:26px;">
+  <h2><span class="n">2</span>岗位族 × 可达性：结构在哪</h2>
+  <p class="q">业务问题：我想去的岗位族，专科生到底有没有机会？机会集中在哪一格？</p>
+  <div class="card">
+    <h3>岗位族 × 可达性 热力图</h3>
+    <p class="hint">颜色越深 = 该组合岗位数越多。看「数据开发/ETL 的 L2 格」——这是专科生的主战场。</p>
+    <svg viewBox="0 0 560 306" width="100%" preserveAspectRatio="xMidYMid meet" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB',sans-serif"><text x="178.7" y="18" font-size="11" fill="#6b7280" text-anchor="middle">L1</text><text x="328.0" y="18" font-size="11" fill="#6b7280" text-anchor="middle">L2</text><text x="477.3" y="18" font-size="11" fill="#6b7280" text-anchor="middle">L3</text><text x="96" y="47.0" font-size="11" fill="#1f2937" text-anchor="end">数据开发/ETL</text><rect x="106.0" y="30" width="145.3" height="26" rx="2" fill="rgba(37,99,235,0.11)"/><text x="178.7" y="47.0" font-size="11" font-weight="600" fill="#1f2937" text-anchor="middle">5</text><rect x="255.3" y="30" width="145.3" height="26" rx="2" fill="rgba(37,99,235,0.88)"/><text x="328.0" y="47.0" font-size="11" font-weight="600" fill="#ffffff" text-anchor="middle">89</text><rect x="404.7" y="30" width="145.3" height="26" rx="2" fill="rgba(37,99,235,0.41)"/><text x="477.3" y="47.0" font-size="11" font-weight="600" fill="#1f2937" text-anchor="middle">38</text><text x="96" y="77.0" font-size="11" fill="#1f2937" text-anchor="end">其他数据类</text><rect x="106.0" y="60" width="145.3" height="26" rx="2" fill="rgba(37,99,235,0.06)"/><text x="178.7" y="77.0" font-size="11" font-weight="600" fill="#1f2937" text-anchor="middle">0</text><rect x="255.3" y="60" width="145.3" height="26" rx="2" fill="rgba(37,99,235,0.41)"/><text x="328.0" y="77.0" font-size="11" font-weight="600" fill="#1f2937" text-anchor="middle">38</text><rect x="404.7" y="60" width="145.3" height="26" rx="2" fill="rgba(37,99,235,0.54)"/><text x="477.3" y="77.0" font-size="11" font-weight="600" fill="#ffffff" text-anchor="middle">52</text><text x="96" y="107.0" font-size="11" fill="#1f2937" text-anchor="end">数据分析/运营</text><rect x="106.0" y="90" width="145.3" height="26" rx="2" fill="rgba(37,99,235,0.10)"/><text x="178.7" y="107.0" font-size="11" font-weight="600" fill="#1f2937" text-anchor="middle">4</text><rect x="255.3" y="90" width="145.3" height="26" rx="2" fill="rgba(37,99,235,0.42)"/><text x="328.0" y="107.0" font-size="11" font-weight="600" fill="#1f2937" text-anchor="middle">39</text><rect x="404.7" y="90" width="145.3" height="26" rx="2" fill="rgba(37,99,235,0.17)"/><text x="477.3" y="107.0" font-size="11" font-weight="600" fill="#1f2937" text-anchor="middle">12</text><text x="96" y="137.0" font-size="11" fill="#1f2937" text-anchor="end">数据治理</text><rect x="106.0" y="120" width="145.3" height="26" rx="2" fill="rgba(37,99,235,0.07)"/><text x="178.7" y="137.0" font-size="11" font-weight="600" fill="#1f2937" text-anchor="middle">1</text><rect x="255.3" y="120" width="145.3" height="26" rx="2" fill="rgba(37,99,235,0.28)"/><text x="328.0" y="137.0" font-size="11" font-weight="600" fill="#1f2937" text-anchor="middle">24</text><rect x="404.7" y="120" width="145.3" height="26" rx="2" fill="rgba(37,99,235,0.24)"/><text x="477.3" y="137.0" font-size="11" font-weight="600" fill="#1f2937" text-anchor="middle">19</text><text x="96" y="167.0" font-size="11" fill="#1f2937" text-anchor="end">数据库运维</text><rect x="106.0" y="150" width="145.3" height="26" rx="2" fill="rgba(37,99,235,0.06)"/><text x="178.7" y="167.0" font-size="11" font-weight="600" fill="#1f2937" text-anchor="middle">0</text><rect x="255.3" y="150" width="145.3" height="26" rx="2" fill="rgba(37,99,235,0.22)"/><text x="328.0" y="167.0" font-size="11" font-weight="600" fill="#1f2937" text-anchor="middle">17</text><rect x="404.7" y="150" width="145.3" height="26" rx="2" fill="rgba(37,99,235,0.13)"/><text x="477.3" y="167.0" font-size="11" font-weight="600" fill="#1f2937" text-anchor="middle">8</text><text x="96" y="197.0" font-size="11" fill="#1f2937" text-anchor="end">数据挖掘/算法</text><rect x="106.0" y="180" width="145.3" height="26" rx="2" fill="rgba(37,99,235,0.06)"/><text x="178.7" y="197.0" font-size="11" font-weight="600" fill="#1f2937" text-anchor="middle">0</text><rect x="255.3" y="180" width="145.3" height="26" rx="2" fill="rgba(37,99,235,0.12)"/><text x="328.0" y="197.0" font-size="11" font-weight="600" fill="#1f2937" text-anchor="middle">7</text><rect x="404.7" y="180" width="145.3" height="26" rx="2" fill="rgba(37,99,235,0.10)"/><text x="477.3" y="197.0" font-size="11" font-weight="600" fill="#1f2937" text-anchor="middle">4</text><text x="96" y="227.0" font-size="11" fill="#1f2937" text-anchor="end">数据标注</text><rect x="106.0" y="210" width="145.3" height="26" rx="2" fill="rgba(37,99,235,0.07)"/><text x="178.7" y="227.0" font-size="11" font-weight="600" fill="#1f2937" text-anchor="middle">1</text><rect x="255.3" y="210" width="145.3" height="26" rx="2" fill="rgba(37,99,235,0.12)"/><text x="328.0" y="227.0" font-size="11" font-weight="600" fill="#1f2937" text-anchor="middle">7</text><rect x="404.7" y="210" width="145.3" height="26" rx="2" fill="rgba(37,99,235,0.06)"/><text x="477.3" y="227.0" font-size="11" font-weight="600" fill="#1f2937" text-anchor="middle">0</text><text x="96" y="257.0" font-size="11" fill="#1f2937" text-anchor="end">数据产品</text><rect x="106.0" y="240" width="145.3" height="26" rx="2" fill="rgba(37,99,235,0.06)"/><text x="178.7" y="257.0" font-size="11" font-weight="600" fill="#1f2937" text-anchor="middle">0</text><rect x="255.3" y="240" width="145.3" height="26" rx="2" fill="rgba(37,99,235,0.10)"/><text x="328.0" y="257.0" font-size="11" font-weight="600" fill="#1f2937" text-anchor="middle">4</text><rect x="404.7" y="240" width="145.3" height="26" rx="2" fill="rgba(37,99,235,0.08)"/><text x="477.3" y="257.0" font-size="11" font-weight="600" fill="#1f2937" text-anchor="middle">2</text><text x="96" y="287.0" font-size="11" fill="#1f2937" text-anchor="end">BI/报表</text><rect x="106.0" y="270" width="145.3" height="26" rx="2" fill="rgba(37,99,235,0.07)"/><text x="178.7" y="287.0" font-size="11" font-weight="600" fill="#1f2937" text-anchor="middle">1</text><rect x="255.3" y="270" width="145.3" height="26" rx="2" fill="rgba(37,99,235,0.07)"/><text x="328.0" y="287.0" font-size="11" font-weight="600" fill="#1f2937" text-anchor="middle">1</text><rect x="404.7" y="270" width="145.3" height="26" rx="2" fill="rgba(37,99,235,0.06)"/><text x="477.3" y="287.0" font-size="11" font-weight="600" fill="#1f2937" text-anchor="middle">0</text></svg>
+  </div>
+</section>
+
+<section>
+  <h2><span class="n">3</span>地域聚集：岗位都在哪几个区</h2>
+  <p class="q">业务问题：投递时应该优先盯哪几个片区，通勤成本怎么权衡？</p>
+  <div class="card">
+    <h3>区县岗位数 Top10</h3>
+    <p class="hint">高新区是绝对核心；「未细分」多为仅标注「成都」的岗位。</p>
+    <svg viewBox="0 0 640 360" width="100%" preserveAspectRatio="xMidYMid meet" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB',sans-serif"><rect x="96" y="10" width="466" height="20" rx="3" fill="#2563eb"/><text x="88" y="26" font-size="12" fill="#1f2937" text-anchor="end">成都(未细分)</text><text x="568" y="26" font-size="12" font-weight="600" fill="#1f2937">107</text><rect x="96" y="44" width="344" height="20" rx="3" fill="#2563eb"/><text x="88" y="60" font-size="12" fill="#1f2937" text-anchor="end">高新区</text><text x="446" y="60" font-size="12" font-weight="600" fill="#1f2937">79</text><rect x="96" y="78" width="100" height="20" rx="3" fill="#2563eb"/><text x="88" y="94" font-size="12" fill="#1f2937" text-anchor="end">武侯区</text><text x="202" y="94" font-size="12" font-weight="600" fill="#1f2937">23</text><rect x="96" y="112" width="82" height="20" rx="3" fill="#2563eb"/><text x="88" y="128" font-size="12" fill="#1f2937" text-anchor="end">神仙树</text><text x="184" y="128" font-size="12" font-weight="600" fill="#1f2937">19</text><rect x="96" y="146" width="60" height="20" rx="3" fill="#2563eb"/><text x="88" y="162" font-size="12" fill="#1f2937" text-anchor="end">郫都区</text><text x="162" y="162" font-size="12" font-weight="600" fill="#1f2937">14</text><rect x="96" y="180" width="39" height="20" rx="3" fill="#2563eb"/><text x="88" y="196" font-size="12" fill="#1f2937" text-anchor="end">锦江区</text><text x="141" y="196" font-size="12" font-weight="600" fill="#1f2937">9</text><rect x="96" y="214" width="34" height="20" rx="3" fill="#2563eb"/><text x="88" y="230" font-size="12" fill="#1f2937" text-anchor="end">双流区</text><text x="136" y="230" font-size="12" font-weight="600" fill="#1f2937">8</text><rect x="96" y="248" width="34" height="20" rx="3" fill="#2563eb"/><text x="88" y="264" font-size="12" fill="#1f2937" text-anchor="end">华阳</text><text x="136" y="264" font-size="12" font-weight="600" fill="#1f2937">8</text><rect x="96" y="282" width="26" height="20" rx="3" fill="#2563eb"/><text x="88" y="298" font-size="12" fill="#1f2937" text-anchor="end">桂溪</text><text x="128" y="298" font-size="12" font-weight="600" fill="#1f2937">6</text><rect x="96" y="316" width="26" height="20" rx="3" fill="#2563eb"/><text x="88" y="332" font-size="12" fill="#1f2937" text-anchor="end">红光</text><text x="128" y="332" font-size="12" font-weight="600" fill="#1f2937">6</text></svg>
+  </div>
+</section>
+
+<section>
+  <div class="insight">
+    <h3>四个可直接写进简历 / 面试讲的结论</h3>
+    <ul>
+      <li><b>薪资看中位数，别看均值。</b>样本均值 22097，中位数 18000 —— 相差约 4097，说明分布右偏（少量高薪岗拉高均值）。对求职者的含义是：用中位数做期望薪资锚点更靠谱。</li>
+      <li><b>学历确实有溢价，但不是唯一通路。</b>大专中位 13500，本科中位 17500，本科溢价约 30%。但<b>「学历不限」岗位中位达 25000</b>，高于本科 —— 说明部分高薪岗看经验与项目，不卡学历，这是专科生的突破口。</li>
+      <li><b>专科生的真实机会面是 64%。</b>L1 可直接投 12 个（3%），L2「跳一跳可达」226 个（61%），两者合计 238 个。真正需要先解决学历的只有 135 个。</li>
+      <li><b>专升本是最有效的单点杠杆。</b>216 个岗位的「解锁路径」是专升本 —— 占了全部岗位的 58%，是所有路径里 ROI 最高的一条。</li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  <span>数据来源：猎聘·成都公开岗位快照（2026-09-09），仅供学习研究与求职分析，不用于商业分发。</span>
+  <span>样本 n=373 · 清洗后有效薪资 373 条</span>
+</footer>
+</div>
+</body>
+</html>
